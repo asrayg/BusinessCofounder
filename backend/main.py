@@ -1,11 +1,20 @@
 from flask import Flask, request, jsonify
-import bedrocktest.py
+import bedrocktest as bed
+import logging
+import boto3
 
 app = Flask(__name__)
 
-emails = {}
+emails = []
 
+bedrock_client = boto3.client(
+    service_name='bedrock-runtime',
+    region_name='us-west-2'
+    )
 
+model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
+system_prompts = [{"text": "You are an app that creates playlists for a radio station that plays rock and pop music."
+                   }]
 
 
 @app.route('/')
@@ -14,25 +23,25 @@ def hello_world():
 
 
 
-@app.route('/makeemail')
+@app.route('/makeemail', methods=['GET'])
 def make_email():
     data = request.get_json()
-    print(data)
-
-    # json should have a rand int and the message you want to add
-    emails[data['id']].append(data['message'])
     
-    response = generate_conversation(
-        bedrock_client, model_id, system_prompts, emails[data['id']])
- 
+    message = {
+        "role": "user",
+        "content": [{"text": data['message']}]
+    }
+    emails.append(message)
+    response = bed.generate_conversation(
+        bedrock_client, model_id, system_prompts, emails)
+    print(response)
     output_message = response['output']['message']
-    messages.append(output_message)
+    emails.append(output_message)
 
 
 
 
-
-    return 'Hello World'
+    return response['output']['message']['content']
 
 
 
