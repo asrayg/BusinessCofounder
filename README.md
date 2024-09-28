@@ -1,5 +1,5 @@
 # Welcome to Hack Midwest 2024!
-<br /><br />
+<br /> <br />
 
 
 ## Getting Started
@@ -22,10 +22,12 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 
 
 ## What is the name of your App?
+*VetPaw Connect*
 
 <br /><br />
+
 ## What does your app do?
-*Describe in a paragraph or so*
+*We are developing a user-friendly website designed to assist individuals in locating lost animals and identifying symptoms in sick animals. Users can upload pictures of animals, and the platform will help diagnose potential health issues by connecting them with knowledgeable animal shelter volunteers and veterinarians. This platform bridges the gap between pet owners, volunteers, and veterinary professionals to provide timely care and support, ensuring lost pets are found and sick animals receive the attention they need*
 
 <br /><br />
 
