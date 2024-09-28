@@ -1,0 +1,59 @@
+.pitch-deck {
+    padding: 20px;
+    background-color: #e6f0ff;
+  }
+  
+  .slide {
+    text-align: center;
+    margin: 20px;
+    display: inline-block;
+  }
+  
+  .slide-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .slide-text, .slide-speech {
+    width: 90%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .ai-edit-button {
+    background-color: #ff6666;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ai-edit-button:hover {
+    background-color: #ff3333;
+  }
+  
+  .export-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .export-buttons button {
+    background-color: #0a73b7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .export-buttons button:hover {
+    background-color: #004b8c;
+  }
+  
