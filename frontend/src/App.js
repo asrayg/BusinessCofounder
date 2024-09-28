@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Injured from './components/injured/injured'; // Importing Injured component
+import './App.css'; // Importing global CSS
 
-function App() {
+// App Component
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Animal Help Portal</h1>
+      {/* Render Injured Component */}
+      <Injured />
     </div>
   );
-}
+};
 
+// Make sure to export the App component as default
 export default App;
