@@ -1,0 +1,35 @@
+.legal-framework-container {
+    padding: 20px;
+    background-color: #e6f0ff;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #0a73b7;
+  }
+  
+  .legal-text {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    width: 60%;
+    margin: 20px auto;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserves line breaks */
+  }
+  
+  .fetch-api-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .fetch-api-button:hover {
+    background-color: #45a049;
+  }
+  

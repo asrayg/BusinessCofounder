@@ -1,0 +1,58 @@
+.target-audience-container {
+    padding: 20px;
+    background-color: #e6f0ff;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #0a73b7;
+  }
+  
+  .feedback-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .text-boxes {
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .fetch-api-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .fetch-api-button:hover {
+    background-color: #45a049;
+  }
+  
