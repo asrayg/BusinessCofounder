@@ -21,7 +21,7 @@ def generate_conversation(bedrock_client,
         messages (JSON) : The messages to send to the model.
 
     Returns:
-        response (JSON): The conversation that the model generated.
+    response (JSON): The conversation that the model generated.
 
     """
 

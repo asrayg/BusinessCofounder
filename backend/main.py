@@ -1,11 +1,42 @@
 from flask import Flask, request, jsonify
-
+import bedrocktest.py
 
 app = Flask(__name__)
+
+emails = {}
+
+
+
 
 @app.route('/')
 def hello_world():
     return 'Hello World'
+
+
+
+@app.route('/makeemail')
+def make_email():
+    data = request.get_json()
+    print(data)
+
+    # json should have a rand int and the message you want to add
+    emails[data['id']].append(data['message'])
+    
+    response = generate_conversation(
+        bedrock_client, model_id, system_prompts, emails[data['id']])
+ 
+    output_message = response['output']['message']
+    messages.append(output_message)
+
+
+
+
+
+    return 'Hello World'
+
+
+
+
 
 
 @app.route('/inj/add', methods=['POST'])
