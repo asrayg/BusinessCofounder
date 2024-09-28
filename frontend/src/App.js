@@ -7,6 +7,7 @@ import Legal from '../src/legal/legal';
 import Email from '../src/emails/emails';
 import PitchDeck from './business/pitch';
 import BusinessModelCanvas from './business/bmc';
+import PitchGenerator from './business/pitchgen';
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Business />} />
         <Route path="/bmc" element={<BusinessModelCanvas />} />
-
         <Route path="/business" element={<Business />} />
         <Route path="/pitch" element={<PitchDeck />} />
+        <Route path="/pitchgen" element={<PitchGenerator />} />
+
         <Route path="/cofound" element={<CoFounder />} />
         <Route path="/email" element={<Email />} />
         <Route path="/invest" element={<Invest />} />
