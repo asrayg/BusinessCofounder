@@ -3,6 +3,7 @@ import TripleToggleSwitch from "./triple";
 import "./investors.css";
 import investorsData from './investors.json';
 import dummyImage from './profile image/dummyPFP.jpg';
+import Header from '../header&footer/header.js';
 
 function Invest() {
   const [selectedOption, setSelectedOption] = useState('left');
@@ -60,9 +61,9 @@ function Invest() {
             <h2>Business CoFounders</h2>
             {content.map(cofounder => (
               <div key={cofounder.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
-                <img 
-                  src={getImageSrc(cofounder.profilePic)} 
-                  alt={`${cofounder.name} - profile`} 
+                <img
+                  src={getImageSrc(cofounder.profilePic)}
+                  alt={`${cofounder.name} - profile`}
                   style={{ borderRadius: '50%', width: '50px', height: '50px', marginRight: '15px', objectFit: 'cover' }}
                 />
                 <div>
@@ -81,9 +82,9 @@ function Invest() {
             <h2>Advisory Board Members</h2>
             {content.map(member => (
               <div key={member.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
-                <img 
-                  src={getImageSrc(member.profilePic)} 
-                  alt={`${member.name} - profile`} 
+                <img
+                  src={getImageSrc(member.profilePic)}
+                  alt={`${member.name} - profile`}
                   style={{ borderRadius: '50%', width: '50px', height: '50px', marginRight: '15px', objectFit: 'cover' }}
                 />
                 <div>
@@ -102,9 +103,9 @@ function Invest() {
             <h2>Angel Investors</h2>
             {content.map(investor => (
               <div key={investor.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', display: 'flex', alignItems: 'start' }}>
-                <img 
-                  src={getImageSrc(investor.profilePic)} 
-                  alt={`${investor.name} - profile`} 
+                <img
+                  src={getImageSrc(investor.profilePic)}
+                  alt={`${investor.name} - profile`}
                   style={{ borderRadius: '50%', width: '50px', height: '50px', marginRight: '15px', objectFit: 'cover' }}
                 />
                 <div>
@@ -129,20 +130,22 @@ function Invest() {
   };
 
   return (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column',
-      justifyContent: 'flex-start', 
-      alignItems: 'center', 
-      minHeight: '100vh', 
-      fontFamily: 'Arial, sans-serif',
-      backgroundColor: '#f0f0f0',
-      padding: '20px'
-    }}>
-      <h1 style={{ fontSize: '28px', marginBottom: '20px' }}>Show Me Some Nearby:</h1>
-      <TripleToggleSwitch labels={labels} onChange={onChange} />
-      <div style={{ marginTop: '20px', fontSize: '16px', maxWidth: '800px', width: '100%' }}>
-        {renderContent()}
+    <div><Header />
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        minHeight: '100vh',
+        fontFamily: 'Arial, sans-serif',
+        backgroundColor: '#f0f0f0',
+        padding: '20px'
+      }}>
+        <h1 style={{ fontSize: '28px', marginBottom: '20px' }}>Show Me Some Nearby:</h1>
+        <TripleToggleSwitch labels={labels} onChange={onChange} />
+        <div style={{ marginTop: '20px', fontSize: '16px', maxWidth: '800px', width: '100%' }}>
+          {renderContent()}
+        </div>
       </div>
     </div>
   );

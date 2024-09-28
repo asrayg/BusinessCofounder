@@ -181,11 +181,10 @@
   
   .loginButton {
     font-size: 2.5vh;
-    margin-left: .5vw;
     white-space: nowrap;
     cursor: pointer;
     color: #00cd26;
-    padding: 5px 10px 5px 10px;
+    padding: 0px 10px 5px 10px;
     border: 3px solid #00cd26;
     border-radius: 8px;
     transition: background-color 0.3s ease;
@@ -198,7 +197,7 @@
   
   .loginButtonRED {
     font-size: 2.5vh;
-    margin-left: 2vw;
+    margin-left: .5vw;
     white-space: nowrap;
     cursor: pointer;
     color: #d60000;
