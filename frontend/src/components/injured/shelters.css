@@ -1,0 +1,91 @@
+.shelters-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffecec;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #d76262;
+    margin-bottom: 20px;
+  }
+  
+  .shelters-map {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  #map {
+    width: 60%;
+    height: 400px;
+    border: 2px solid #fdb2b2;
+    border-radius: 10px;
+  }
+  
+  .shelter-info {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .shelter-card {
+    display: flex;
+    background-color: #fdb2b2;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .shelter-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  
+  .shelter-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .shelter-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .shelter-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .shelter-details button {
+    align-self: flex-end;
+    padding: 5px 10px;
+    background-color: #ff6060;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6060;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #f83e3e;
+  }
+  
