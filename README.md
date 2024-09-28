@@ -14,12 +14,10 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 ## Who's on your team?
 *List the full names,  email address & Github username of your teammates*
 
-1.   **Full Name**  || **fullname@company.com**  (or fullname@school.edu if you're a CS student) || **Github Username**
-2. 
-3.
-4.
-5.
-
+1.   Asray Gopa     || asray@iastate.edu      || asrayg
+2.   Arjun Patel    || anpatel@iastate.edu    || arj873
+3.   Justin Moran   || jmoran0@iastate.edu    || JustinPMoran
+  
 <br /><br />
 
 
@@ -37,11 +35,11 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 - [ ]  Pinata Challenge
 - [ ]  Pinata AI Challenge
 - [ ]  Pinata Enterprise Challenge
-- [ ]  AWS Bedrock Challenge
-- [ ]  Red Hat | Intel AI Challenge
+- [X]  AWS Bedrock Challenge
+- [X]  Red Hat | Intel AI Challenge
 - [ ]  Zoom Challenge
 - [ ]  USDA Challenge
-- [ ]  brAIn Rot Challenge
+- [X]  brAIn Rot Challenge
 
 
 <br /><br />
