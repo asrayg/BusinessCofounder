@@ -1,0 +1,203 @@
+{
+    "investors": [
+        {
+            "profilePic": "https://cdn.stocksnap.io/img-thumbs/960w/female-portrait_QRVWBXC99Z.jpg",
+            "id": 1,
+            "name": "Alice Johnson",
+            "email": "alice.johnson@example.com",
+            "investments": [
+                {
+                    "company": "Tech Innovators",
+                    "amount": 50000
+                },
+                {
+                    "company": "Eco Solutions",
+                    "amount": 75000
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bob Smith",
+            "email": "bob.smith@example.com",
+            "investments": [
+                {
+                    "company": "HealthTech",
+                    "amount": 25000
+                },
+                {
+                    "company": "Foodies Delight",
+                    "amount": 30000
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Diana Prince",
+            "email": "diana.prince@example.com",
+            "investments": [
+                {
+                    "company": "Urban Farming",
+                    "amount": 61389
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Bruce Wayne",
+            "email": "bruce.wayne@example.com",
+            "investments": [
+                {
+                    "company": "Health First",
+                    "amount": 72027
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "James Bond",
+            "email": "james.bond@example.com",
+            "investments": [
+                {
+                    "company": "HealthTech",
+                    "amount": 64999
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Harry Potter",
+            "email": "harry.potter@example.com",
+            "investments": [
+                {
+                    "company": "Clean Water",
+                    "amount": 69612
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Wade Wilson",
+            "email": "wade.wilson@example.com",
+            "investments": [
+                {
+                    "company": "HealthTech",
+                    "amount": 22095
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Wade Wilson",
+            "email": "wade.wilson@example.com",
+            "investments": [
+                {
+                    "company": "Green Energy",
+                    "amount": 96820
+                }
+            ]
+        }
+    ],
+    "cofounders": [
+        {
+            "profilePic" : "https://www.seekpng.com/png/detail/60-604032_face-businessman-png-dummy-images-for-testimonials.png",
+            "id": 1,
+            "name": "Charlie Brown",
+            "role": "CEO",
+            "email": "charlie.brown@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Diana Prince",
+            "role": "CTO",
+            "email": "diana.prince@example.com"
+        },
+        {
+            "id": 3,
+            "name": "John Doe",
+            "role": "CTO",
+            "email": "john.doe@example.com"
+        },
+        {
+            "id": 4,
+            "name": "Gandalf",
+            "role": "CFO",
+            "email": "gandalf@example.com"
+        },
+        {
+            "id": 5,
+            "name": "Mark Twain",
+            "role": "Chief Strategist",
+            "email": "mark.twain@example.com"
+        },
+        {
+            "id": 6,
+            "name": "Leonardo DiCaprio",
+            "role": "CFO",
+            "email": "leonardo.dicaprio@example.com"
+        },
+        {
+            "id": 7,
+            "name": "Leonardo DiCaprio",
+            "role": "CTO",
+            "email": "leonardo.dicaprio@example.com"
+        },
+        {
+            "id": 8,
+            "name": "Mark Twain",
+            "role": "Chief Strategist",
+            "email": "mark.twain@example.com"
+        }
+    ],
+    "advisory_board_members": [
+        {
+            "profilePic" : "https://th.bing.com/th/id/OIP.EG4-jhIcpUqzWozSs-_EIQAAAA?w=450&h=524&rs=1&pid=ImgDetMain",
+            "id": 1,
+            "name": "Ethan Hunt",
+            "expertise": "Business Strategy",
+            "email": "ethan.hunt@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Fiona Glenanne",
+            "expertise": "Marketing",
+            "email": "fiona.glenanne@example.com"
+        },
+        {
+            "id": 3,
+            "name": "Tony Stark",
+            "expertise": "Customer Relations",
+            "email": "tony.stark@example.com"
+        },
+        {
+            "id": 4,
+            "name": "Tony Stark",
+            "expertise": "Marketing",
+            "email": "tony.stark@example.com"
+        },
+        {
+            "id": 5,
+            "name": "Steve Rogers",
+            "expertise": "Product Development",
+            "email": "steve.rogers@example.com"
+        },
+        {
+            "id": 6,
+            "name": "Steve Rogers",
+            "expertise": "Technical Support",
+            "email": "steve.rogers@example.com"
+        },
+        {
+            "id": 7,
+            "name": "Bruce Banner",
+            "expertise": "Business Strategy",
+            "email": "bruce.banner@example.com"
+        },
+        {
+            "id": 8,
+            "name": "Steve Rogers",
+            "expertise": "Business Strategy",
+            "email": "steve.rogers@example.com"
+        }
+    ]
+}
