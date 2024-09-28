@@ -1,7 +1,6 @@
 # Welcome to Hack Midwest 2024!
 <br /> <br />
 
-
 ## Getting Started
 Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 1. Clone this repository and rename to the name of your app or idea
@@ -22,12 +21,12 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 
 
 ## What is the name of your App?
-*VetPaw Connect*
+*BusinessCofounder: Your First and Last Business Co-Founder *
 
 <br /><br />
 
 ## What does your app do?
-*We are developing a user-friendly website designed to assist individuals in locating lost animals and identifying symptoms in sick animals. Users can upload pictures of animals, and the platform will help diagnose potential health issues by connecting them with knowledgeable animal shelter volunteers and veterinarians. This platform bridges the gap between pet owners, volunteers, and veterinary professionals to provide timely care and support, ensuring lost pets are found and sick animals receive the attention they need*
+*Helps technical cofounders with business stuff and helps them find a business partner as well so they dont need out web app anymore*
 
 <br /><br />
 
@@ -38,7 +37,7 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 - [ ]  Pinata AI Challenge
 - [ ]  Pinata Enterprise Challenge
 - [X]  AWS Bedrock Challenge
-- [X]  Red Hat | Intel AI Challenge
+- [ ]  Red Hat | Intel AI Challenge
 - [ ]  Zoom Challenge
 - [ ]  USDA Challenge
 - [X]  brAIn Rot Challenge

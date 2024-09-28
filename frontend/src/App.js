@@ -5,13 +5,16 @@ import CoFounder from '../src/cofounder/cofounder';
 import Invest from '../src/investors/investors';
 import Legal from '../src/legal/legal';
 import Email from '../src/emails/emails';
+import PitchDeck from './business/pitch';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Business />} />
+
         <Route path="/business" element={<Business />} />
+        <Route path="/pitch" element={<PitchDeck />} />
         <Route path="/cofound" element={<CoFounder />} />
         <Route path="/email" element={<Email />} />
         <Route path="/invest" element={<Invest />} />
