@@ -1,9 +1,3 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: Apache-2.0
-"""
-Shows how to use the Converse API with Anthropic Claude 3 Sonnet (on demand).
-"""
-
 import logging
 import boto3
 
