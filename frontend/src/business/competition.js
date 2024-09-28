@@ -50,7 +50,6 @@ const dummyCompetitors = [
 const Competition = () => {
   return (
     <div className="competition-container">
-      <h2>Competitors</h2>
       <div className="competitor-grid">
         {dummyCompetitors.map((competitor, index) => (
           <div className="competitor-card" key={index}>
