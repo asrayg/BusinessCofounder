@@ -6,12 +6,14 @@ import Invest from '../src/investors/investors';
 import Legal from '../src/legal/legal';
 import Email from '../src/emails/emails';
 import PitchDeck from './business/pitch';
+import BusinessModelCanvas from './business/bmc';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Business />} />
+        <Route path="/bmc" element={<BusinessModelCanvas />} />
 
         <Route path="/business" element={<Business />} />
         <Route path="/pitch" element={<PitchDeck />} />
