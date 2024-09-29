@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Business from '../src/business/business';
 import CoFounder from '../src/cofounder/cofounder';
 import Invest from '../src/investors/investors';
@@ -13,6 +13,8 @@ import Prospectus from './business/prospectus';
 import TargetAudience from './business/targetAudience';
 import NDAGenerator from './legal/ndaGenerator';
 import FindLawyers from './legal/findLawyers';
+import TCGenerator from './legal/tnccreator';
+import LegalLinks from './legal/links';
 
 function App() {
   return (
@@ -27,9 +29,12 @@ function App() {
         <Route path="/target" element={<TargetAudience />} />
         <Route path="/nda" element={<NDAGenerator />} />
         <Route path="/find" element={<FindLawyers />} />
+        <Route path="/links" element={<LegalLinks />} />
+
         <Route path="/competition" element={< Competition/>} />
         <Route path="/cofound" element={<CoFounder />} />
         <Route path="/email" element={<Email />} />
+        <Route path="/tnc" element={<TCGenerator />} />
         <Route path="/invest" element={<Invest />} />
         <Route path="/legal" element={<Legal />} />
       </Routes>
