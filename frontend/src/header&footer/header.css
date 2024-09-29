@@ -445,3 +445,7 @@ body {
 .dropdown:hover .dropdown-menu {
     animation: fadeIn 0.3s ease;
 }
+
+.fixZLayer {
+    z-index: 99;
+}

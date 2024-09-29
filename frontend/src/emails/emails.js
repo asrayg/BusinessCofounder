@@ -1,56 +1,53 @@
-// import React from 'react';
-// import Header from '../header&footer/header.js';
-
-// emails.js
-
-// Function to create and append HTML elements
-function createEmailInterface() {
-  const container = document.createElement('div');
-  container.innerHTML = `
-      <h1>Ask the Backend</h1>
-      <input type="text" id="userInput" placeholder="Enter your question">
-      <button id="askButton">Ask</button>
-      <div id="response"></div>
-  `;
-  document.body.appendChild(container);
-}
+import React, { useState, useEffect } from "react";
+import Header from '../header&footer/header.js';
 
 // Function to handle sending a request to the Flask backend
 async function askBackend(message) {
-  console.log("?????????????????????????????????????????")
   try {
-      const response = await fetch('http://127.0.0.1:5000/makeemail', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ "text" : "text hwre" })
-      });
-      console.log(response)
-      const data = await response.json();
-      console.log('Response from backend:', data);
-      return data;
+    const response = await fetch('http://127.0.0.1:5000/makeemail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ "text": message })
+    });
+    const data = await response.json();
+    console.log('Response from backend:', data);
+    return data;
   } catch (error) {
-      console.error('Error asking backend:', error);
-      return 'An error occurred while fetching the response.';
+    console.error('Error asking backend:', error);
+    return 'An error occurred while fetching the response.';
   }
 }
 
-// Function to handle user input and display response
-function handleUserInput() {
-  const userMessage = document.getElementById('userInput').value;
-  if (userMessage) {
-      askBackend(userMessage).then(response => {
-          document.getElementById('response').textContent = response;
-      });
-  }
-}
+// Create a React component for the Email interface
+function Email() {
+  const [userInput, setUserInput] = useState('');
+  const [response, setResponse] = useState('');
 
-// Initialize the interface and add event listeners when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-  createEmailInterface();
-  const askButton = document.getElementById('askButton');
-  askButton.addEventListener('click', handleUserInput);
-});
+  const handleUserInput = async () => {
+    if (userInput) {
+      const result = await askBackend(userInput);
+      setResponse(result);
+    }
+  };
+
+  return (
+    <div>
+      <Header />
+      <div>
+        <h1>Ask the Backend</h1>
+        <input
+          type="text"
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+          placeholder="Enter your question"
+        />
+        <button onClick={handleUserInput}>Ask</button>
+        <div>{response}</div>
+      </div>
+    </div>
+  );
+}
 
 export default Email;
