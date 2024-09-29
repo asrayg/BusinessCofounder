@@ -3,6 +3,11 @@ import bedrocktest as bed
 import logging
 import boto3
 from flask_cors import CORS, cross_origin
+import json
+import os
+import base64
+
+
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -59,19 +64,9 @@ def mk_slides():
 
 Create the slides for a presentation on the given topic.
 Include main headings for each slide, detailed bullet points for each slide.
-Add relevant, detailed content to each slide. When relevant, add one or two EXAMPLES to illustrate the concept.
-For two or three important slides, generate the key message that those slides convey.
+Add relevant, detailed content to each slide, add one background image to illustrate the concept.
 
-Identify if a slide describes a step-by-step/sequential process, then begin the bullet points with a special marker >>.
-Limit this to max two or three slides.
 
-Also, add at least one slide with a double column layout by generating appropriate content based on the description in the JSON schema provided below.
-In addition, for each slide, add image keywords based on the content of the respective slides.
-These keywords will be later used to search for images from the Web relevant to the slide content.
-
-In addition, create one slide containing 4 TO 6 icons (pictograms) illustrating some key ideas/aspects/concepts relevant to the topic.
-In this slide, each line of text will begin with the name of a relevant icon enclosed between [[ and ]].
-Select appropriate and exact icon names from the <ICONS> section provided below.
 
 <ICONS>
 {icons_list}
@@ -80,18 +75,18 @@ Select appropriate and exact icon names from the <ICONS> section provided below.
 The content of each slide should be VERBOSE, DESCRIPTIVE, and very DETAILED. Each bullet point should be detailed and explanatory, not just short phrases.
 
 ALWAYS add a concluding slide at the end, containing a list of the key takeaways and an optional call-to-action if relevant to the context.
-Unless explicitly instructed with the topic, create 10 TO 12 SLIDES in total. You must never create more tha 15 slides.
+Unless explicitly instructed with the topic, create 7 TO 9 SLIDES in total. You must never create more tha 10 slides.
 
 
 ### Topic:
 {question}
 
 
-The output must be only a valid and syntactically correct JSON adhering to the following schema:
-{{
+The output must be only a valid and syntactically correct JSON adhering to the following schema, do not output anything esle:
+{
     "title": "Presentation Title",
     "slides": [
-        {{
+        {
             "heading": "Heading for the First Slide",
             "bullet_points": [
                 "First bullet point",
@@ -102,9 +97,9 @@ The output must be only a valid and syntactically correct JSON adhering to the f
                 "Second bullet point"
             ],
             "key_message": "",
-            "img_keywords": "a few keywords"
-        }},
-        {{
+            "img_keywords": "a Background image"
+        },
+        {
             "heading": "Heading for the Second Slide",
             "bullet_points": [
                 "First bullet point",
@@ -113,8 +108,8 @@ The output must be only a valid and syntactically correct JSON adhering to the f
             ],
             "key_message": "The key message conveyed in this slide",
             "img_keywords": "some keywords for this slide"
-        }},
-        {{
+        },
+        {
             "heading": "A slide illustrating key ideas/aspects/concepts (Hint: generate an appropriate heading)",
             "bullet_points": [
                 "[[icon name]] Some text",
@@ -124,8 +119,8 @@ The output must be only a valid and syntactically correct JSON adhering to the f
             ],
             "key_message": "",
             "img_keywords": ""
-        }},
-        {{
+        },
+        {
             "heading": "A slide that describes a step-by-step/sequential process",
             "bullet_points": [
                 ">> The first step of the process (begins with special marker >>)",
@@ -134,62 +129,129 @@ The output must be only a valid and syntactically correct JSON adhering to the f
             ],
             "key_message": "",
             "img_keywords": ""
-        }},
-        {{
+        },
+        {
             "heading": "A slide with a double column layout (useful for side-by-side comparison/contrasting of two related concepts, e.g., pros & cons, advantages & risks, old approach vs. modern approach, and so on)",
             "bullet_points": [
-                {{
+                {
                     "heading": "Heading of the left column",
                     "bullet_points": [
                         "First bullet point",
                         "Second bullet item",
                         "Third bullet point"
                     ]
-                }},
-                {{
+                },
+                {
                     "heading": "Heading of the right column",
                     "bullet_points": [
                         "First bullet point",
                         "Second bullet item",
                         "Third bullet point"
                     ]
-                }}
+                }
             ],
             "key_message": "",
             "img_keywords": ""
-        }}
+        }
     ]
-}}
+}'''}]
 
 
-### Output:
-```json'''}]
     tmp = []
-    datastr = "Make a pitchdeck based off of this info about the bussness" + json_to_string(data)
+    #datastr = "Make a pitchdeck based off of this info about the bussness" + json_to_string(data)
+
+    datastr = "Make a pitchdeck based off of this info about the bussness: \n" + json_to_string(json.loads('''{"startupName":"HealthMate","missionStatement":"To empower individuals to take control of their health by providing accessible, real-time personalized insights and connections to health professionals.","problem":"HealthMate simplifies health tracking and symptom diagnosis, connecting users with medical professionals and creating a seamless bridge between patients and health services.\n","uniqueFeature":"We combine AI-powered symptom analysis with direct communication to healthcare providers, allowing users to get instant insights and professional consultations in one app.\n","targetCustomer":"Health-conscious individuals and families, people managing chronic conditions, and healthcare professionals.","marketSize":"$10 billion growing telehealth market.","competitors":"WebMD, ZocDoc, BetterHelp.","revenueModel":"Subscription-based service for premium features, referral fees from healthcare providers.","pricingStrategy":"Freemium model with a $9.99/month premium plan offering unlimited consultations and in-depth reports.","channels":"Social media advertising, partnerships with medical professionals, app stores, and healthcare blogs.","product":"A mobile app offering symptom analysis, real-time health tracking, and direct consultation with healthcare professionals.","keyFeatures":"AI-based symptom checker, health insights, appointment scheduling, health tracking dashboard, 24/7 chat with healthcare providers.\n","startupStage":"Pre-revenue, beta-testing phase.","keyMilestones":"Beta version launched with over 5,000 downloads, partnerships with 20 local clinics.\n","userBase":"Currently 3,000 active users; ideal userbase includes 50,000 users within the first year.","founders":"John Doe (CEO): Background in AI and telemedicine. Jane Smith (CTO): Expert in app development with experience in health-tech. Mark Lee (COO): Healthcare operations expert.","advisors":"Dr. Sarah Patel, leading telehealth practitioner; Dr. Evan Green, AI health diagnostics researcher","financialMetrics":"Burn rate of $15,000/month, $500,000 in total raised capital, aiming for $10,000 MRR after launch.","currentRunway":"12 months","fundsRaised":"Yes, raised $500,000 in seed funding.","fundingSought":"Seeking an additional $1 million.","fundingUse":"Product development, customer acquisition, and expanding partnerships with healthcare providers.\n","longTermVision":"To be the go-to app for personal health management and to integrate deeply into global healthcare systems.\n","risks":"Regulatory hurdles, ensuring data privacy, and competition from well-established healthcare apps.\n","scalability":"AI-based diagnosis allows for rapid scaling, and partnerships with clinics and hospitals will drive user growth.\n"}'''.replace('\n', '')))
+    print(datastr)
     message = {
         "role": "user",
         "content": [{"text": datastr}]
     }
     tmp.append(message)
-    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email"}]
     response = bed.generate_conversation(
         bedrock_client, model_id, system_prompts, tmp)
     output_message = response['output']['message']['content']
 
-    tmp2 = []
-    print(output_message)
-    tmp2.append(output_message)
-    print(tmp2[0])
-    tmp2[0][0]['text'] = "remove all new lines from this: " +  tmp2[0][0]['text']
+    #tmp2 = []
+    #tmp2.append(output_message)
+    #tmp2[0][0]['text'] = "remove all new lines from this: " +  tmp2[0][0]['text']
+    #tmp33 = tmp2[0][0]['text']
+    #
+    #print("00000000000000----------------------------------------------------------------------------------------------")
+    #print(tmp33)
+    #tmp3 = {
+        #"role": "user",
+        #"content": [{"text": tmp33}]
+    #}
+    #print("-1111---------------------------------------------------------------------------------------------1111")
+    #print(tmp3)
+    #tmp4 = []
+    #tmp4.append(tmp3)
+    #response = bed.generate_conversation(
+        #bedrock_client, model_id, system_prompts, tmp4)
+#
+    #print("--222-------------------------------------------------------------------------------------------22222-")
+    #print(response)
+    #output_message = response['output']['message']
+    print("--3333-------------------------------------------------------------------------------------------33333-")
+    imgs = imageGen(output_message[0]['text'].replace('```json','').replace('\n', ''))   
+    return imgs
+
+
+def imageGen(jsn):
+    print("how how are you")
+    print(remove_before_first_brace(jsn))
+    thefuckingjson = json.loads(remove_before_first_brace(jsn))
+
+    retobj = thefuckingjson
+    print(thefuckingjson)
     
-    response = bed.generate_conversation(
-        bedrock_client, model_id, system_prompts, tmp2)
-    print(response)
-    output_message = response['output']['message']
+    for i in range(len(thefuckingjson['slides'])):
+            # Create a Bedrock Runtime client in the AWS Region of your choice.
+        client = boto3.client("bedrock-runtime", region_name="us-west-2")
+
+# Set the model ID, e.g., Titan Image Generator G1.
+        img_model_id = "stability.stable-diffusion-xl-v1"
+
+
+# Format the request payload using the model's native structure.
+        native_request = {"text_prompts":[{"text":"bakgorund image:" + thefuckingjson['slides'][i]['img_keywords'],"weight":1}],"cfg_scale":10,"steps":50,"seed":0,"width":1024,"height":1024,"samples":1}
+
+# Convert the native request to JSON.
+        request = json.dumps(native_request)
+
+# Invoke the model with the request.
+        response = client.invoke_model(modelId=img_model_id, body=request)
+
+# Decode the response body.
+        model_response = json.loads(response["body"].read())
+
+# Extract the image data.
+        base64_image_data = model_response["artifacts"][0]["base64"]
+
+# Save the generated image to a local folder.
+        w = 1
+        while os.path.exists(os.path.join("../imgs/", f"image_{w}.png")):
+            w+=1
+
+        image_data = base64.b64decode(base64_image_data)
+        image_path = os.path.join("../imgs/", f"image_{w}.png")
+        thefuckingjson['slides'][i]['img_keywords'] = f"127.0.0.1:8000/image_{w}.png"
+        with open(image_path, "wb") as file:
+            file.write(image_data)
+
+        print(f"The generated image has been saved to {image_path}.")
+    
+
+    return thefuckingjson
 
 
 
-    return output_message
+
+
+
+
+
+
 
 
 @app.route('/inj/add', methods=['POST'])
@@ -214,6 +276,8 @@ def hello_worldpt2():
 def json_to_string(json_obj):
     return '\n'.join([f"{key}: {value}" for key, value in json_obj.items()])
 
+def remove_before_first_brace(s):
+    return s[s.index('{'):] if '{' in s else s
 
 if __name__ == '__main__':
 
