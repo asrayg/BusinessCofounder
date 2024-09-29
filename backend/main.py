@@ -35,7 +35,8 @@ def hello_world():
 @cross_origin()
 def make_email():
     data = request.get_json()
-    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email"}]
+    emails = []
+    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email, the startup you are writing for is"}]
     message = {
         "role": "user",
         "content": [{"text": data['text']}]
@@ -54,6 +55,13 @@ def make_email():
 @cross_origin()
 def clr_email():
     emails=[]
+
+
+
+
+
+
+
 
 
 @app.route('/makeSlides', methods=['GET'])
@@ -158,9 +166,9 @@ The output must be only a valid and syntactically correct JSON adhering to the f
 
 
     tmp = []
-    #datastr = "Make a pitchdeck based off of this info about the bussness" + json_to_string(data)
+    datastr = "Make a pitchdeck based off of this info about the bussness" + json_to_string(data)
 
-    datastr = "Make a pitchdeck based off of this info about the bussness: \n" + json_to_string(json.loads('''{"startupName":"HealthMate","missionStatement":"To empower individuals to take control of their health by providing accessible, real-time personalized insights and connections to health professionals.","problem":"HealthMate simplifies health tracking and symptom diagnosis, connecting users with medical professionals and creating a seamless bridge between patients and health services.\n","uniqueFeature":"We combine AI-powered symptom analysis with direct communication to healthcare providers, allowing users to get instant insights and professional consultations in one app.\n","targetCustomer":"Health-conscious individuals and families, people managing chronic conditions, and healthcare professionals.","marketSize":"$10 billion growing telehealth market.","competitors":"WebMD, ZocDoc, BetterHelp.","revenueModel":"Subscription-based service for premium features, referral fees from healthcare providers.","pricingStrategy":"Freemium model with a $9.99/month premium plan offering unlimited consultations and in-depth reports.","channels":"Social media advertising, partnerships with medical professionals, app stores, and healthcare blogs.","product":"A mobile app offering symptom analysis, real-time health tracking, and direct consultation with healthcare professionals.","keyFeatures":"AI-based symptom checker, health insights, appointment scheduling, health tracking dashboard, 24/7 chat with healthcare providers.\n","startupStage":"Pre-revenue, beta-testing phase.","keyMilestones":"Beta version launched with over 5,000 downloads, partnerships with 20 local clinics.\n","userBase":"Currently 3,000 active users; ideal userbase includes 50,000 users within the first year.","founders":"John Doe (CEO): Background in AI and telemedicine. Jane Smith (CTO): Expert in app development with experience in health-tech. Mark Lee (COO): Healthcare operations expert.","advisors":"Dr. Sarah Patel, leading telehealth practitioner; Dr. Evan Green, AI health diagnostics researcher","financialMetrics":"Burn rate of $15,000/month, $500,000 in total raised capital, aiming for $10,000 MRR after launch.","currentRunway":"12 months","fundsRaised":"Yes, raised $500,000 in seed funding.","fundingSought":"Seeking an additional $1 million.","fundingUse":"Product development, customer acquisition, and expanding partnerships with healthcare providers.\n","longTermVision":"To be the go-to app for personal health management and to integrate deeply into global healthcare systems.\n","risks":"Regulatory hurdles, ensuring data privacy, and competition from well-established healthcare apps.\n","scalability":"AI-based diagnosis allows for rapid scaling, and partnerships with clinics and hospitals will drive user growth.\n"}'''.replace('\n', '')))
+    # datastr = "Make a pitchdeck based off of this info about the bussness: \n" + json_to_string(json.loads('''{"startupName":"HealthMate","missionStatement":"To empower individuals to take control of their health by providing accessible, real-time personalized insights and connections to health professionals.","problem":"HealthMate simplifies health tracking and symptom diagnosis, connecting users with medical professionals and creating a seamless bridge between patients and health services.\n","uniqueFeature":"We combine AI-powered symptom analysis with direct communication to healthcare providers, allowing users to get instant insights and professional consultations in one app.\n","targetCustomer":"Health-conscious individuals and families, people managing chronic conditions, and healthcare professionals.","marketSize":"$10 billion growing telehealth market.","competitors":"WebMD, ZocDoc, BetterHelp.","revenueModel":"Subscription-based service for premium features, referral fees from healthcare providers.","pricingStrategy":"Freemium model with a $9.99/month premium plan offering unlimited consultations and in-depth reports.","channels":"Social media advertising, partnerships with medical professionals, app stores, and healthcare blogs.","product":"A mobile app offering symptom analysis, real-time health tracking, and direct consultation with healthcare professionals.","keyFeatures":"AI-based symptom checker, health insights, appointment scheduling, health tracking dashboard, 24/7 chat with healthcare providers.\n","startupStage":"Pre-revenue, beta-testing phase.","keyMilestones":"Beta version launched with over 5,000 downloads, partnerships with 20 local clinics.\n","userBase":"Currently 3,000 active users; ideal userbase includes 50,000 users within the first year.","founders":"John Doe (CEO): Background in AI and telemedicine. Jane Smith (CTO): Expert in app development with experience in health-tech. Mark Lee (COO): Healthcare operations expert.","advisors":"Dr. Sarah Patel, leading telehealth practitioner; Dr. Evan Green, AI health diagnostics researcher","financialMetrics":"Burn rate of $15,000/month, $500,000 in total raised capital, aiming for $10,000 MRR after launch.","currentRunway":"12 months","fundsRaised":"Yes, raised $500,000 in seed funding.","fundingSought":"Seeking an additional $1 million.","fundingUse":"Product development, customer acquisition, and expanding partnerships with healthcare providers.\n","longTermVision":"To be the go-to app for personal health management and to integrate deeply into global healthcare systems.\n","risks":"Regulatory hurdles, ensuring data privacy, and competition from well-established healthcare apps.\n","scalability":"AI-based diagnosis allows for rapid scaling, and partnerships with clinics and hospitals will drive user growth.\n"}'''.replace('\n', '')))
     print(datastr)
     message = {
         "role": "user",
@@ -197,7 +205,7 @@ The output must be only a valid and syntactically correct JSON adhering to the f
     return imgs
 
 
-def imageGen(jsn):
+def imageGen(jsn): 
     print("how how are you")
     print(remove_before_first_brace(jsn))
     thefuckingjson = json.loads(remove_before_first_brace(jsn))
