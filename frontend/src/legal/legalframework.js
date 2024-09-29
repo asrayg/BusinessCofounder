@@ -4,10 +4,39 @@ import Header from '../header&footer/header.js';
 
 const LegalFramework = () => {
   const [legalText, setLegalText] = useState("Loading legal framework...");
+  const fetchPitches = async () => {
+    const businessData = localStorage.getItem('businessFormData'); // Fetch data from localStorage
+    console.log('Fetched business data from localStorage:', businessData);
 
+    if (businessData) {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/legal', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: businessData, // Send the business data to the API
+        });
+        console.log('API response status:', response.status);
+
+        const data = await response.json(); // Get the API response as JSON
+        console.log('Received data from API:', data);
+
+      //FIXME: make it update the text, idk how x        
+      } catch (error) {
+        console.error('Error fetching pitches:', error);
+      }
+    } else {
+      console.error('No business data found in localStorage');
+    }
+  };
   // Simulating API call for legal framework text
   useEffect(() => {
     // Placeholder for actual API call
+
+    
+
+
     setTimeout(() => {
       setLegalText(`
         Legal Framework Setup:
