@@ -64,7 +64,7 @@ def clr_email():
 
 
 
-@app.route('/makeSlides', methods=['GET'])
+@app.route('/makeSlides', methods=['POST'])
 @cross_origin()
 def mk_slides():
     data = request.get_json()
@@ -83,7 +83,7 @@ Add relevant, detailed content to each slide, add one background image to illust
 The content of each slide should be VERBOSE, DESCRIPTIVE, and very DETAILED. Each bullet point should be detailed and explanatory, not just short phrases.
 
 ALWAYS add a concluding slide at the end, containing a list of the key takeaways and an optional call-to-action if relevant to the context.
-Unless explicitly instructed with the topic, create 7 TO 9 SLIDES in total. You must never create more tha 10 slides.
+Unless explicitly instructed with the topic, create 5 SLIDES EXACTLY in total. You must never create more than 6 slides.
 
 
 ### Topic:
