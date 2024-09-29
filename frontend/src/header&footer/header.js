@@ -24,7 +24,7 @@ const Header = () => {
 
                 <div className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown fixZLayer">
                             <a className="nav-link navBody dropdown-toggle" href="#" id="businessDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Business Help
                             </a>
@@ -34,9 +34,12 @@ const Header = () => {
                                 <li><a className="dropdown-item" onClick={() => navigate('/pitchgen')}>Pitch Scripts</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/prospectus')}>Prospectus</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/target')}>Target Audience</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/bmc')}>Business Model Canvas</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/competition')}>Competition</a></li>
+
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown fixZLayer">
                             <a className="nav-link navBody dropdown-toggle" href="#" id="legalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Legal Help
                             </a>

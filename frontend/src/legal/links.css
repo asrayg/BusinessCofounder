@@ -1,45 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .legal-links-container {
+  padding: 40px;
+  background-color: #f4f7fc; /* Light background for the container */
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Professional font */
+}
+
+h2 {
+  color: #004b8c;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 40px; /* Increased margin for spacing */
+}
+
+.legal-section {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Soft shadow for a card-like look */
+  border: 1px solid #ddd; /* Light border for modern feel */
+  margin-bottom: 30px;
+  width: 70%;
+  margin: 0 auto 30px auto;
+  text-align: left;
+}
+
+.legal-section h3 {
+  color: #0a73b7;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0a73b7; /* Underline with the brand color for emphasis */
+  padding-bottom: 10px;
+}
+
+.legal-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.legal-section li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #555; /* Subtle color for a professional feel */
+}
+
+.legal-section a {
+  color: #0a73b7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.legal-section a:hover {
+  text-decoration: underline;
+  color: #004080; /* Darker shade on hover for emphasis */
+}
+
+/* Add subtle box effects on hover */
+.legal-section:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .legal-section {
+    width: 90%;
     padding: 20px;
-    background-color: #f4f7fc;
-    text-align: center;
   }
-  
+
   h2 {
-    color: #0a73b7;
+    font-size: 24px;
     margin-bottom: 30px;
   }
-  
-  .legal-section {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    width: 70%;
-    margin: 0 auto 20px auto;
-    text-align: left;
-  }
-  
+
   .legal-section h3 {
-    color: #0a73b7;
-    margin-bottom: 15px;
+    font-size: 18px;
   }
-  
-  .legal-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
+
   .legal-section li {
-    margin-bottom: 10px;
+    font-size: 14px;
   }
-  
-  .legal-section a {
-    color: #0a73b7;
-    text-decoration: none;
-  }
-  
-  .legal-section a:hover {
-    text-decoration: underline;
-  }
-  
+}

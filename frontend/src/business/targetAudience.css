@@ -1,58 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 .target-audience-container {
-    padding: 20px;
-    background-color: #e6f0ff;
+    padding: 40px;
+    background-color: #f4f8ff; /* Light background for a professional feel */
     text-align: center;
-  }
-  
-  h2 {
-    color: #0a73b7;
-  }
-  
-  .feedback-box {
+    font-family: 'Poppins', sans-serif; /* Corporate font */
+}
+
+h2 {
+    color: #004b8c; /* Professional blue */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.feedback-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  p {
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 50%;
+    margin: 0 auto 40px auto;
+}
+
+p {
     margin-right: 10px;
     font-weight: bold;
     color: #333;
-  }
-  
-  .circle {
-    width: 20px;
-    height: 20px;
+    font-size: 18px;
+}
+
+.circle {
+    width: 30px; /* Larger for better visual feedback */
+    height: 30px;
     border-radius: 50%;
     display: inline-block;
-  }
-  
-  .text-boxes {
-    width: 60%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a shadow to make the circle stand out */
+}
+
+.text-boxes {
+    width: 70%; /* Wider text area for readability */
     margin: 0 auto;
-  }
-  
-  textarea {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+textarea {
     width: 100%;
-    height: 80px;
-    margin-top: 10px;
-    padding: 10px;
+    height: 100px; /* Increased height for better display */
+    margin-top: 20px;
+    padding: 14px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .fetch-api-button {
-    background-color: #4caf50;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05); /* Inset shadow for depth */
+    margin-bottom: 30px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #004b8c; /* Consistent focus color */
+    box-shadow: 0 0 12px rgba(0, 115, 183, 0.2); /* Strong focus glow */
+}
+
+.fetch-api-button {
+    background-color: #28a745; /* Corporate green color */
     color: white;
-    padding: 10px 20px;
+    padding: 14px 28px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-  }
-  
-  .fetch-api-button:hover {
-    background-color: #45a049;
-  }
-  
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.fetch-api-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Subtle hover scaling */
+}
+
+@media (max-width: 768px) {
+    .feedback-box, .text-boxes {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .fetch-api-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}

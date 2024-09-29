@@ -31,7 +31,7 @@ def hello_world():
 
 
 
-@app.route('/makeemail', methods=['GET'])
+@app.route('/makeemail', methods=['POST'])
 @cross_origin()
 def make_email():
     data = request.get_json()

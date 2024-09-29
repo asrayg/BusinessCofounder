@@ -1,41 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 .business-form {
-    background-color: #f0f4ff;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Deepened shadow for a more premium feel */
+  width: 80%;
+  max-width: 850px; /* Slightly larger max width for spacious layout */
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+}
+
+h2 {
+  color: #004b8c; /* Professional dark blue */
+  font-size: 34px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for text depth */
+}
+
+h3 {
+  color: #004b8c;
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 2px solid #004b8c; /* Accent underline */
+  padding-bottom: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  width: 100%; /* Make both input and textarea take the full width of the form */
+  margin: 12px 0;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif; /* Updated font */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea {
+  min-height: 130px; /* Slightly increased height for textarea */
+  resize: vertical; /* Allow the user to resize the textarea vertically */
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #004b8c; /* Consistent focus border color */
+  box-shadow: 0 0 12px rgba(0, 115, 183, 0.2); /* Stronger focus glow */
+}
+
+button {
+  background-color: #004b8c;
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif; /* Use Poppins for buttons as well */
+  cursor: pointer;
+  margin-top: 30px; /* Increased spacing for cleaner layout */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #00396d; /* Darker hover effect */
+  transform: scale(1.05); /* More pronounced hover scaling */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .business-form {
+    width: 95%;
     padding: 20px;
-    border-radius: 10px;
-    width: 600px;
-    margin: auto;
   }
-  
-  h2, h3 {
-    color: #0a73b7;
+
+  h2 {
+    font-size: 28px;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
+
+  h3 {
+    font-size: 22px;
   }
-  
+
   input, textarea {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 14px;
   }
-  
-  textarea {
-    min-height: 80px;
-  }
-  
+
   button {
-    background-color: #ff6666;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 14px;
+    font-size: 16px;
   }
-  
-  button:hover {
-    background-color: #ff3333;
-  }
-  
+}

@@ -1,74 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .tc-generator-container {
-    padding: 20px;
-    background-color: #e6f0ff;
-    text-align: center;
-  }
-  
-  h2 {
-    color: #0a73b7;
-  }
-  
-  .tc-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    width: 60%;
-    margin: 20px auto;
-    text-align: left;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  textarea {
-    height: 80px;
-  }
-  
-  .generate-tc-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .generate-tc-button:hover {
-    background-color: #45a049;
-  }
-  
-  .tc-result {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    width: 60%;
-    margin: 20px auto;
-    text-align: left;
-  }
-  
-  pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    line-height: 1.6;
-  }
-  
+  padding: 40px;
+  background-color: #f4f8ff; /* Light blue background for a clean look */
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Use a professional font */
+}
+
+h2 {
+  color: #0a73b7;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.tc-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border: 1px solid #ddd;
+  width: 60%;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0a73b7; /* Highlight color on focus */
+  box-shadow: 0 0 10px rgba(10, 115, 183, 0.15); /* Soft glow effect */
+}
+
+textarea {
+  height: 100px; /* Adjusted height for readability */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.generate-tc-button {
+  background-color: #0a73b7; /* Corporate blue color */
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.generate-tc-button:hover {
+  background-color: #085a92; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+.tc-result {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Same soft shadow for consistency */
+  border: 1px solid #ddd;
+  width: 60%;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.tc-result h3 {
+  color: #0a73b7;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  font-size: 14px;
+}

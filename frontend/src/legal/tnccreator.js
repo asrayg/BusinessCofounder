@@ -49,8 +49,6 @@ const TCGenerator = () => {
     <div>
       <Header />
     <div className="tc-generator-container">
-      <h2>T&C Generator</h2>
-
       {/* Input Form */}
       <div className="tc-form">
         <div className="form-group">

@@ -9,6 +9,10 @@ const Prospectus = () => {
   const prospectusText = `
     The Brik aims to address the prevalent issue of disorganization and frustration caused by frequently misplaced daily essentials...
     (Put your entire prospectus text here or fetch from an API)
+    The Brik aims to address the prevalent issue of disorganization and frustration caused by frequently misplaced daily essentials...
+    (Put your entire prospectus text here or fetch from an API)
+    The Brik aims to address the prevalent issue of disorganization and frustration caused by frequently misplaced daily essentials...
+    (Put your entire prospectus text here or fetch from an API)
   `;
 
   const handleSuggestionChange = (e) => {
@@ -31,15 +35,12 @@ const Prospectus = () => {
     <div>
       <Header />
     <div className="prospectus-container">
-      <h2>Prospectus</h2>
 
       {/* Display Prospectus Text */}
       <div className="prospectus-text">
         <p>{prospectusText}</p>
       </div>
 
-      {/* Button to Export Text to PDF */}
-      <button onClick={exportToPDF} className="export-button">Export to PDF</button>
 
       {/* Suggestion Box */}
       <div className="suggestion-box">
@@ -51,6 +52,10 @@ const Prospectus = () => {
         />
         <button onClick={handleAISuggestion}>Ask AI for Suggestions</button>
       </div>
+
+            {/* Button to Export Text to PDF */}
+            <button onClick={exportToPDF} className="export-button">Export to PDF</button>
+
     </div>
     </div>
   );

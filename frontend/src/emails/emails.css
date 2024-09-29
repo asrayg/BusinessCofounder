@@ -1,0 +1,78 @@
+.email-generator-container {
+    padding: 20px;
+    background-color: #f4f7fc;
+    text-align: center;
+  }
+  
+  .email-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  h2 {
+    color: #0a73b7;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .email-input-container {
+    margin-top: 20px;
+  }
+  
+  .email-input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .generate-email-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .generate-email-button:hover {
+    background-color: #45a049;
+  }
+  
+  .response-container {
+    margin-top: 30px;
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 320px; /* Set a fixed height */
+    overflow-y: auto; /* Allow vertical scrolling if the content exceeds the height */
+}
+
+.response-container h3 {
+    color: #0a73b7;
+    margin-bottom: 0px; /* Add some space below the heading */
+}
+
+.response-container p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+  
+  .response-container p {
+    font-size: 16px;
+    color: #333;
+  }
+  

@@ -17,17 +17,17 @@ function Invest() {
     left: {
       title: "Business CoFounders",
       value: "left",
-      desc: "View your potential business co-founders",
+      // desc: "View your potential business co-founders",
     },
     right: {
       title: "Angel Investors",
       value: "right",
-      desc: "Check out potential angel investors",
+      // desc: "Check out potential angel investors",
     },
     center: {
-      title: "Advisory Board Members",
+      title: "Board Members",
       value: "center",
-      desc: "Get in touch with potential advisory board members",
+      // desc: "Get in touch with potential advisory board members",
     },
   };
 
@@ -58,7 +58,6 @@ function Invest() {
         content = data.cofounders;
         return (
           <div>
-            <h2>Business CoFounders</h2>
             {content.map(cofounder => (
               <div key={cofounder.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
                 <img
@@ -79,7 +78,6 @@ function Invest() {
         content = data.advisory_board_members;
         return (
           <div>
-            <h2>Advisory Board Members</h2>
             {content.map(member => (
               <div key={member.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
                 <img
@@ -100,7 +98,6 @@ function Invest() {
         content = data.investors;
         return (
           <div>
-            <h2>Angel Investors</h2>
             {content.map(investor => (
               <div key={investor.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', display: 'flex', alignItems: 'start' }}>
                 <img
@@ -141,7 +138,6 @@ function Invest() {
         backgroundColor: '#f0f0f0',
         padding: '20px'
       }}>
-        <h1 style={{ fontSize: '28px', marginBottom: '20px' }}>Show Me Some Nearby:</h1>
         <TripleToggleSwitch labels={labels} onChange={onChange} />
         <div style={{ marginTop: '20px', fontSize: '16px', maxWidth: '800px', width: '100%' }}>
           {renderContent()}

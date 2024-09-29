@@ -1,56 +1,71 @@
-// import React from 'react';
-// import Header from '../header&footer/header.js';
-
-// emails.js
-
-// Function to create and append HTML elements
-function createEmailInterface() {
-  const container = document.createElement('div');
-  container.innerHTML = `
-      <h1>Ask the Backend</h1>
-      <input type="text" id="userInput" placeholder="Enter your question">
-      <button id="askButton">Ask</button>
-      <div id="response"></div>
-  `;
-  document.body.appendChild(container);
-}
+import React, { useState } from "react";
+import Header from '../header&footer/header.js';
+import './emails.css';
 
 // Function to handle sending a request to the Flask backend
 async function askBackend(message) {
-  console.log("?????????????????????????????????????????")
   try {
-      const response = await fetch('http://127.0.0.1:5000/makeemail', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ "text" : "text hwre" })
-      });
-      console.log(response)
-      const data = await response.json();
-      console.log('Response from backend:', data);
-      return data;
+    const response = await fetch('http://127.0.0.1:5000/makeemail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ "text": message })
+    });
+    const data = await response.json();
+    console.log('Response from backend:', data);
+    return data;  // Assuming the backend returns an object with text property
   } catch (error) {
-      console.error('Error asking backend:', error);
-      return 'An error occurred while fetching the response.';
+    console.error('Error asking backend:', error);
+    return { text: 'An error occurred while fetching the response.' }; // Error handling
   }
 }
 
-// Function to handle user input and display response
-function handleUserInput() {
-  const userMessage = document.getElementById('userInput').value;
-  if (userMessage) {
-      askBackend(userMessage).then(response => {
-          document.getElementById('response').textContent = response;
-      });
-  }
+// Create a React component for the Email interface
+function EmailGenerator() {
+  const [userInput, setUserInput] = useState(''); // Input state
+  const [response, setResponse] = useState(''); // State to store the backend response
+
+  const handleUserInput = async () => {
+    if (userInput) {
+      const result = await askBackend(userInput);
+      
+      // Update the state with the backend response
+      const responseText = result[0].text || 'No response received';
+      setResponse(responseText); // Display response in a styled container
+    }
+  };
+
+  return (
+    <div>
+    <Header />
+    <div className="email-generator-container">
+      <div className="email-content">
+        <h2>Generate Your Email</h2>
+        <p>Input the email request or details you'd like generated, and the backend will provide the content.</p>
+
+        {/* User Input Section */}
+        <div className="email-input-container">
+          <input
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Enter your email request"
+            className="email-input"
+          />
+          <button onClick={handleUserInput} className="generate-email-button">Generate Email</button>
+        </div>
+
+        {/* Display Response */}
+        <div id="response-container" className="response-container">
+          <h3>Email Response:</h3>
+          <p>{response}</p> {/* Display the response here */}
+        </div>
+      </div>
+    </div>
+    </div>
+
+  );
 }
 
-// Initialize the interface and add event listeners when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-  createEmailInterface();
-  const askButton = document.getElementById('askButton');
-  askButton.addEventListener('click', handleUserInput);
-});
-
-export default Email;
+export default EmailGenerator;
