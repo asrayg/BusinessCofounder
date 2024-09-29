@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './findLawyers.css';
+import Header from '../header&footer/header.js';
 
 const dummyLawyers = [
   {
@@ -33,6 +34,8 @@ const FindLawyers = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="find-lawyers-container">
       {/* Sidebar */}
       <div className="sidebar">
@@ -82,6 +85,7 @@ const FindLawyers = () => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };

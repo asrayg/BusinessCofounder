@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './tnccreator.css';
+import Header from '../header&footer/header.js';
 
 const TCGenerator = () => {
   // State to store user inputs
@@ -45,6 +46,8 @@ const TCGenerator = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="tc-generator-container">
       <h2>T&C Generator</h2>
 
@@ -92,6 +95,7 @@ const TCGenerator = () => {
           <pre>{generatedTC}</pre>
         </div>
       )}
+    </div>
     </div>
   );
 };

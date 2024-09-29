@@ -11,7 +11,7 @@ const Header = () => {
         // localStorage.removeItem('token');
         navigate('/');
     };
-    // VentureVoyage
+
     return (
         <nav className="navBarLander navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
@@ -24,11 +24,29 @@ const Header = () => {
 
                 <div className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <div className="nav-link navBody" onClick={() => navigate('/business')}>Business Help</div>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link navBody dropdown-toggle" href="#" id="businessDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Business Help
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="businessDropdown">
+                                <li><a className="dropdown-item" onClick={() => navigate('/business')}>Business Evaluation</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/pitch')}>Pitch Decks</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/pitchgen')}>Pitch Scripts</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/prospectus')}>Prospectus</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/target')}>Target Audience</a></li>
+                            </ul>
                         </li>
-                        <li className="nav-item">
-                            <div className="nav-link navBody" onClick={() => navigate('/legal')}>Legal Help</div>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link navBody dropdown-toggle" href="#" id="legalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Legal Help
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="legalDropdown">
+                                <li><a className="dropdown-item" onClick={() => navigate('/legal')}>Legal Framework</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/find')}>Find Lawyers</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/nda')}>Generate NDA</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/tnc')}>Generate TNC</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/links')}>Legal Links</a></li>
+                            </ul>
                         </li>
                         <li className="nav-item">
                             <div className="nav-link navBody" onClick={() => navigate('/email')}>Generate Emails</div>
