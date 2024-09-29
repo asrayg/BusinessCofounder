@@ -34,7 +34,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" onClick={() => navigate('/pitch')}>Pitch Decks</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/pitchgen')}>Pitch Scripts</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/prospectus')}>Prospectus</a></li>
-                                <li><a className="dropdown-item" onClick={() => navigate('/target')}>Target Audience</a></li>
+                                {/* <li><a className="dropdown-item" onClick={() => navigate('/target')}>Target Audience</a></li> */}
                                 <li><a className="dropdown-item" onClick={() => navigate('/bmc')}>Business Model Canvas</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/competition')}>Competition</a></li>
 
@@ -48,7 +48,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" onClick={() => navigate('/legal')}>Legal Framework</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/find')}>Find Lawyers</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/nda')}>Generate NDA</a></li>
-                                <li><a className="dropdown-item" onClick={() => navigate('/tnc')}>Generate TNC</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/tnc')}>Generate T%C</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/links')}>Legal Links</a></li>
                             </ul>
                         </li>

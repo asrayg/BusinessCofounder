@@ -177,11 +177,7 @@ const Prospectus = () => {
             name="suggestion"
             value={suggestion}
             onChange={handleSuggestionChange}
-            placeholder="Ask the AI for suggestions... 
-            
-            
-            
-            "
+            placeholder="Ask the AI for suggestions... "
           />
           <button onClick={handleAISuggestion}>Ask AI for Suggestions</button>
         </div>
