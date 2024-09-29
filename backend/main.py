@@ -79,8 +79,20 @@ def quick_pitch():
 @cross_origin()
 def bmc():
     data = request.get_json()
-    pmt = "make a business model canvas for this startup"
-    return generic_gen(pmt,json_to_string(data))  
+        pmt = "I am making a business model canvas for this startup, what is/are the: "
+    ret = {
+        "Key Partners": generic_gen(pmt + "Key Partners",json_to_string(data))
+        "Key Activities": generic_gen(pmt+ "Key Activities",json_to_string(data))
+        "Key Resources":generic_gen(pmt+ "Key Resources",json_to_string(data))
+        "Value Propositions":generic_gen(pmt+ "Value Propositions",json_to_string(data))
+        "Customer Relationships":generic_gen(pmt+ "Customer Relationships",json_to_string(data))
+        "Customer Segments":generic_gen(pmt+ "Customer Segments",json_to_string(data))
+        "Channels":generic_gen(pmt+ "Channels",json_to_string(data))
+        "Cost Structure":generic_gen(pmt+ "Cost Structure",json_to_string(data))
+        "Revenue Streams":generic_gen(pmt+ "Revenue Streams",json_to_string(data))
+
+    }
+    return ret
 
 
 
