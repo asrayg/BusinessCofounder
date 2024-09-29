@@ -19,7 +19,7 @@ const PitchGenerator = () => {
     const { name, value } = e.target;
     setSuggestions({ ...suggestions, [name]: value });
   };
-
+ 
   const handleAISuggestion = (pitchType) => {
     // Placeholder for AI API call
     alert(`AI is generating suggestions for the ${pitchType}`);

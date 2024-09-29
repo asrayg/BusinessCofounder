@@ -12,6 +12,7 @@ import Competition from './business/competition';
 import Prospectus from './business/prospectus';
 import TargetAudience from './business/targetAudience';
 import NDAGenerator from './legal/ndaGenerator';
+import FindLawyers from './legal/findLawyers';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/prospectus" element={<Prospectus />} />
         <Route path="/target" element={<TargetAudience />} />
         <Route path="/nda" element={<NDAGenerator />} />
-
+        <Route path="/find" element={<FindLawyers />} />
         <Route path="/competition" element={< Competition/>} />
         <Route path="/cofound" element={<CoFounder />} />
         <Route path="/email" element={<Email />} />
