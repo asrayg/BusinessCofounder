@@ -2,8 +2,15 @@ from flask import Flask, request, jsonify
 import bedrocktest as bed
 import logging
 import boto3
+from flask_cors import CORS, cross_origin
+
+
 
 app = Flask(__name__)
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 emails = []
 
@@ -17,18 +24,21 @@ model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
 
 
 @app.route('/')
+@cross_origin()
 def hello_world():
     return 'Hello World'
 
 
 
-@app.route('/makeemail', methods=['GET'])
+@app.route('/makeemail', methods=['POST'])
+@cross_origin()
 def make_email():
     data = request.get_json()
+    print(data)
     system_prompts = [{"text": "You are a app that writes start ups emails"}]
     message = {
         "role": "user",
-        "content": [{"text": data['message']}]
+        "content": [{"text": data['text']}]
     }
     emails.append(message)
     response = bed.generate_conversation(
@@ -179,6 +189,7 @@ The output must be only a valid and syntactically correct JSON adhering to the f
 
 
 @app.route('/inj/add', methods=['POST'])
+@cross_origin()
 def hello_worldpt2():
     
     data = request.get_json()
@@ -202,4 +213,4 @@ def json_to_string(json_obj):
 
 if __name__ == '__main__':
 
-    app.run()
+    app.run(port=5000)
