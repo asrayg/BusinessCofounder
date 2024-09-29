@@ -17,6 +17,7 @@
             ]
         },
         {
+            "profilePic" : "https://cdn.connectsites.net/user_files/toledospeedway/profile_photos/008/526/414/original.jpg?1664334031&height=1200&width=1200",
             "id": 2,
             "name": "Bob Smith",
             "email": "bob.smith@example.com",
@@ -32,6 +33,7 @@
             ]
         },
         {
+            "profilePic" : "https://th.bing.com/th/id/R.9f909e47ddfdd7ab255971b2575dcfb8?rik=8JdK90F8aI9J7Q&riu=http%3a%2f%2fwritestylesonline.com%2fwp-content%2fuploads%2f2016%2f08%2fFollow-These-Steps-for-a-Flawless-Professional-Profile-Picture-1024x1024.jpg&ehk=at%2bW8ahmVDAWSjLun4vkjMUmmlvUD7psBtJ5Bf9jSfA%3d&risl=&pid=ImgRaw&r=0",
             "id": 3,
             "name": "Diana Prince",
             "email": "diana.prince@example.com",
@@ -43,6 +45,7 @@
             ]
         },
         {
+            "profilePic" : "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "id": 4,
             "name": "Bruce Wayne",
             "email": "bruce.wayne@example.com",
@@ -107,18 +110,21 @@
             "email": "charlie.brown@example.com"
         },
         {
+            "profilePic" : "https://th.bing.com/th/id/R.9f909e47ddfdd7ab255971b2575dcfb8?rik=8JdK90F8aI9J7Q&riu=http%3a%2f%2fwritestylesonline.com%2fwp-content%2fuploads%2f2016%2f08%2fFollow-These-Steps-for-a-Flawless-Professional-Profile-Picture-1024x1024.jpg&ehk=at%2bW8ahmVDAWSjLun4vkjMUmmlvUD7psBtJ5Bf9jSfA%3d&risl=&pid=ImgRaw&r=0",
             "id": 2,
             "name": "Diana Prince",
             "role": "CTO",
             "email": "diana.prince@example.com"
         },
         {
+            "profilePic" : "https://cdn.connectsites.net/user_files/toledospeedway/profile_photos/008/526/414/original.jpg?1664334031&height=1200&width=1200",
             "id": 3,
             "name": "John Doe",
             "role": "CTO",
             "email": "john.doe@example.com"
         },
         {
+            "profilePic" : "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "id": 4,
             "name": "Gandalf",
             "role": "CFO",
@@ -131,6 +137,7 @@
             "email": "mark.twain@example.com"
         },
         {
+            "profilePic" : "https://i.pinimg.com/originals/39/c2/d8/39c2d8c37062c4ead5dd95c98678f10d.jpg",            
             "id": 6,
             "name": "Leonardo DiCaprio",
             "role": "CFO",
@@ -164,12 +171,14 @@
             "email": "fiona.glenanne@example.com"
         },
         {
+            "profilePic" : "https://th.bing.com/th/id/OIP.jl2KBac8MFmfLCWouEupoQAAAA?rs=1&pid=ImgDetMain",
             "id": 3,
             "name": "Tony Stark",
             "expertise": "Customer Relations",
             "email": "tony.stark@example.com"
         },
         {
+            "profilePic" : "https://i.pinimg.com/originals/39/c2/d8/39c2d8c37062c4ead5dd95c98678f10d.jpg",
             "id": 4,
             "name": "Tony Stark",
             "expertise": "Marketing",
@@ -182,6 +191,7 @@
             "email": "steve.rogers@example.com"
         },
         {
+            "profilePic" : "https://i.pinimg.com/originals/39/c2/d8/39c2d8c37062c4ead5dd95c98678f10d.jpg",
             "id": 6,
             "name": "Steve Rogers",
             "expertise": "Technical Support",
