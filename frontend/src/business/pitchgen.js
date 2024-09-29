@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './pitchgen.css';
+import Header from '../header&footer/header.js';
 
 const PitchGenerator = () => {
   // State to store pitches and suggestions
@@ -27,6 +28,8 @@ const PitchGenerator = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="pitch-generator-container">
 
       <div className="pitch-boxes">
@@ -69,6 +72,7 @@ const PitchGenerator = () => {
           <button onClick={() => handleAISuggestion('4-minute pitch')}>Ask AI for edits</button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

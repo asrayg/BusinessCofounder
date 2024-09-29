@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './targetAudience.css';
+import Header from '../header&footer/header.js';
 
 const TargetAudience = () => {
   // State for target audience feedback
@@ -27,6 +28,8 @@ const TargetAudience = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="target-audience-container">
       <h2>Target Audience</h2>
 
@@ -52,6 +55,7 @@ const TargetAudience = () => {
       </div>
 
 
+    </div>
     </div>
   );
 };

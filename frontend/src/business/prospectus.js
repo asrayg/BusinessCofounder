@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import jsPDF from 'jspdf';
 import './prospectus.css';
+import Header from '../header&footer/header.js';
 
 const Prospectus = () => {
   const [suggestion, setSuggestion] = useState("");
@@ -27,6 +28,8 @@ const Prospectus = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="prospectus-container">
       <h2>Prospectus</h2>
 
@@ -48,6 +51,7 @@ const Prospectus = () => {
         />
         <button onClick={handleAISuggestion}>Ask AI for Suggestions</button>
       </div>
+    </div>
     </div>
   );
 };

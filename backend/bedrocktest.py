@@ -1,9 +1,3 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: Apache-2.0
-"""
-Shows how to use the Converse API with Anthropic Claude 3 Sonnet (on demand).
-"""
-
 import logging
 import boto3
 
@@ -27,7 +21,7 @@ def generate_conversation(bedrock_client,
         messages (JSON) : The messages to send to the model.
 
     Returns:
-        response (JSON): The conversation that the model generated.
+    response (JSON): The conversation that the model generated.
 
     """
 
