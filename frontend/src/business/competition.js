@@ -1,5 +1,6 @@
 import React from 'react';
 import './competition.css';
+import Header from '../header&footer/header.js';
 
 const dummyCompetitors = [
   {
@@ -49,6 +50,8 @@ const dummyCompetitors = [
 
 const Competition = () => {
   return (
+    <div>
+      <Header />
     <div className="competition-container">
       <div className="competitor-grid">
         {dummyCompetitors.map((competitor, index) => (
@@ -61,6 +64,7 @@ const Competition = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

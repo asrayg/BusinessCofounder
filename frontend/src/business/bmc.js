@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './bmc.css';
 import html2canvas from 'html2canvas';
+import Header from '../header&footer/header.js';
 
 const BusinessModelCanvas = () => {
   const [bmcData, setBmcData] = useState({
@@ -38,6 +39,8 @@ const BusinessModelCanvas = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="bmc-container">
 
       {/* BMC Grid Layout */}
@@ -169,6 +172,7 @@ const BusinessModelCanvas = () => {
       <button className="generate-image-button" onClick={generateBMCImage}>
         Generate BMC Image
       </button>
+    </div>
     </div>
   );
 };

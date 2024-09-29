@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './legalframework.css';
+import Header from '../header&footer/header.js';
 
 const LegalFramework = () => {
   const [legalText, setLegalText] = useState("Loading legal framework...");
@@ -24,16 +25,18 @@ const LegalFramework = () => {
   }, []);
 
   return (
-    <div className="legal-framework-container">
-      <h2>Legal Framework</h2>
+    <div><Header />
+      <div className="legal-framework-container">
+        <h2>Legal Framework</h2>
 
-      {/* Display the legal framework text */}
-      <div className="legal-text">
-        <p>{legalText}</p>
+        {/* Display the legal framework text */}
+        <div className="legal-text">
+          <p>{legalText}</p>
+        </div>
+
+        {/* Placeholder for future backend/API integration */}
+        <button className="fetch-api-button">Fetch Updated Legal Info</button>
       </div>
-
-      {/* Placeholder for future backend/API integration */}
-      <button className="fetch-api-button">Fetch Updated Legal Info</button>
     </div>
   );
 };

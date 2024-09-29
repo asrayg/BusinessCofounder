@@ -3,6 +3,7 @@ import './pitch.css';
 import Slider from 'react-slick'; // Horizontal sliding effect
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Header from '../header&footer/header.js';
 
 // import PptxGenJS from 'pptxgenjs'; // For PPTX export
 // import jsPDF from 'jspdf'; // For PDF export
@@ -67,6 +68,8 @@ const PitchDeck = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="pitch-deck">
       <Slider {...sliderSettings}>
         {slides.map((slide, index) => (
@@ -101,6 +104,7 @@ const PitchDeck = () => {
         <button onClick={handleExportPPTX}>Convert to PPTX</button>
         <button onClick={handleExportPDF}>Convert to PDF</button>
       </div>
+    </div>
     </div>
   );
 };
