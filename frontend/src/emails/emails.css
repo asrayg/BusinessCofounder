@@ -55,11 +55,21 @@
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
-  
-  .response-container h3 {
+    height: 320px; /* Set a fixed height */
+    overflow-y: auto; /* Allow vertical scrolling if the content exceeds the height */
+}
+
+.response-container h3 {
     color: #0a73b7;
-  }
+    margin-bottom: 0px; /* Add some space below the heading */
+}
+
+.response-container p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
   
   .response-container p {
     font-size: 16px;

@@ -37,8 +37,9 @@ function EmailGenerator() {
   };
 
   return (
+    <div>
+    <Header />
     <div className="email-generator-container">
-      <Header />
       <div className="email-content">
         <h2>Generate Your Email</h2>
         <p>Input the email request or details you'd like generated, and the backend will provide the content.</p>
@@ -62,6 +63,8 @@ function EmailGenerator() {
         </div>
       </div>
     </div>
+    </div>
+
   );
 }
 

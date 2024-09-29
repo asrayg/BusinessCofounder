@@ -1,62 +1,113 @@
 .pitch-generator-container {
-    padding: 20px;
-    background-color: #f4f7fc;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #0a73b7;
-  }
-  
-  .pitch-boxes {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px; /* Space between the boxes */
-    margin-top: 20px;
-  }
-  
+  padding: 50px;
+  background-color: #f0f4f8; /* Lighter background to make cards stand out */
+}
+
+h2 {
+  text-align: center;
+  color: #004b8c;
+  font-size: 28px; /* Larger, more prominent heading */
+  margin-bottom: 40px; /* Increased spacing */
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif; /* Professional font */
+}
+
+.pitch-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Ample space between boxes */
+  margin-top: 40px;
+  flex-wrap: wrap; /* Ensures boxes wrap on smaller screens */
+}
+
+.pitch-box {
+  background: linear-gradient(145deg, #ffffff, #f3f6fc); /* Subtle gradient for depth */
+  border-radius: 15px;
+  padding: 30px;
+  width: 30%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Enhanced shadow for a 3D feel */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transitions */
+}
+
+.pitch-box:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Elevates box further on hover */
+}
+
+.pitch-box h3 {
+  margin-bottom: 15px;
+  color: #004b8c;
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e6ef;
+  padding-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pitch-box p {
+  background-color: #eef5ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  height: 120px;
+  overflow-y: auto;
+  border: 1px solid #dce3eb;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+  width: 100%;
+  height: 100px; /* Slightly larger text area */
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea:focus {
+  border-color: #004b8c;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 115, 183, 0.2); /* Glowing effect on focus */
+}
+
+button {
+  background: linear-gradient(145deg, #ff7a7a, #ff4d4d); /* Gradient background for buttons */
+  color: white;
+  padding: 14px 28px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #ff4d4d, #ff3333); /* More intense hover color */
+  transform: scale(1.05); /* Slight increase in size on hover */
+}
+
+@media (max-width: 992px) {
   .pitch-box {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    width: 30%; /* Ensure each box takes up equal space */
+    width: 45%; /* Adjust box width for tablets */
   }
-  
-  .pitch-box h3 {
-    margin-bottom: 10px;
-    color: #333;
+}
+
+@media (max-width: 768px) {
+  .pitch-box {
+    width: 100%; /* Full-width boxes for mobile */
   }
-  
-  .pitch-box p {
-    background-color: #e6f0ff;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    height: 100px; /* Adjust height for uniformity */
-    overflow-y: auto;
+
+  .pitch-boxes {
+    gap: 20px; /* Reduce gap between boxes on smaller screens */
   }
-  
-  textarea {
-    width: 100%;
-    height: 80px;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: #ff6666;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #ff3333;
-  }
-  
+}
