@@ -52,6 +52,8 @@ const NDAGenerator = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="nda-generator-container">
       {/* Input Form */}
       <div className="nda-form">
@@ -114,6 +116,7 @@ const NDAGenerator = () => {
           <pre>{ndaText}</pre>
         </div>
       )}
+    </div>
     </div>
   );
 };
