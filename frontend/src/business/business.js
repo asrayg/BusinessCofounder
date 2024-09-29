@@ -38,9 +38,15 @@ const BusinessForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Functionality to send formData to backend or store it locally
+    
+    const jsonData = JSON.stringify(formData);
+    console.log(jsonData);
+    
+    // Functionality to send jsonData to backend or store it locally
+    // Example: Store it in localStorage
+    localStorage.setItem('businessFormData', jsonData);
   };
+  
 
   return (
     <div>
