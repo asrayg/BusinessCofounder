@@ -214,7 +214,7 @@ def imageGen(jsn):
 
 
 # Format the request payload using the model's native structure.
-        native_request = {"text_prompts":[{"text":"bakgorund image:" + thefuckingjson['slides'][i]['img_keywords'],"weight":1}],"cfg_scale":10,"steps":50,"seed":0,"width":1024,"height":1024,"samples":1}
+        native_request = {"text_prompts":[{"text":"bakgorund image:" + thefuckingjson['slides'][i]['img_keywords'],"weight":1}],"cfg_scale":10,"steps":50,"seed":0,"width":1536,"height":1024,"samples":1}
 
 # Convert the native request to JSON.
         request = json.dumps(native_request)
