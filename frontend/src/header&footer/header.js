@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './header.css';
+import LOGO from "../images/logoWhite.png";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Header = () => {
         <nav className="navBarLander navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <div className="herdMateFont navBarLogo navbar-brand" onClick={() => navigate('/')}>
-                BusinessCofounder
+                <img src={LOGO} style={{ width: '4vh', marginRight: '8px', marginTop: '-.76vh' }}/>BusinessCofounder
                 </div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
