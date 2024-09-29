@@ -113,7 +113,12 @@ def pros():
 def legal():
     data = request.get_json()
 
-    pmt = "make a legal framework for this startup"
+    pmt = '''make a legal framework for this startup,         1. Company Structure: Choose the most suitable legal structure for your business, such as LLC, Corporation, or Sole Proprietorship.
+        2. Compliance with Regulations: Ensure that you are compliant with local, state, and federal regulations, including licensing and permits.
+        3. Intellectual Property: Protect your business name, logo, and other intellectual properties through trademarks, patents, and copyrights.
+        4. Contracts and Agreements: Establish clear contracts for partnerships, employees, and suppliers to protect the business from disputes.
+        5. Data Protection: Implement policies to protect customer data in line with GDPR, CCPA, or other relevant data protection laws.
+        6. Liability and Insurance: Obtain the necessary insurance to cover liabilities and protect the business against unforeseen risks.'''
     return generic_gen(pmt,json_to_string(data))  
 
 
@@ -122,9 +127,32 @@ def legal():
 @cross_origin()
 def tnc():
     data = request.get_json()
+    
 
-    pmt = "make a T&C for this startup"
-    return generic_gen(pmt,json_to_string(data))  
+    sp = '''
+        You are a bot that generates terms and conditions for start ups
+        
+      TERMS AND CONDITIONS
+
+      1. Introduction:
+      Welcome to . These terms and conditions outline the rules and regulations for the use of our services described as follows: .
+
+      2. Acceptance of Terms:
+      By accessing and using our services, you accept these terms and conditions in full.
+
+      3. Governing Law:
+      These terms will be governed by and construed in accordance with the laws of , and you submit to the jurisdiction of the courts located in that state.
+
+      4. Modifications:
+      We reserve the right to revise these terms at any time, and such changes will be effective immediately upon posting.
+
+      5. Termination:
+      We may terminate or suspend access to our services immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach the terms.
+    
+    '''
+    pmt = '''make a terms and conditions for this startup,''' + json_to_string(data)
+    
+    return generic_gen(pmt,sp)
 
 
 
@@ -139,7 +167,6 @@ def tnc():
 def generic_gen(prompt, sys_prompt):
     data = request.get_json()
     tmp = []
-    print("1111111111111111111111111111111111111111111111111111111111111111111")
     message = {
         "role": "user",
         "content": [{"text": prompt}]
@@ -148,7 +175,6 @@ def generic_gen(prompt, sys_prompt):
 
 
     system_prompt = [{"text": sys_prompt}]
-    print("222222222222222222222222222222222222222222222222222222222222222222")
     response = bed.generate_conversation(
         bedrock_client, model_id, system_prompt, tmp)
     print(response)
@@ -353,27 +379,6 @@ def imageGen(jsn):
 
 
 
-
-
-
-
-
-
-
-
-@app.route('/inj/add', methods=['POST'])
-@cross_origin()
-def hello_worldpt2():
-    
-    data = request.get_json()
-
-
-    print(data)
-    if 'injured' in data and isinstance(data['injured'], list):
-        # Process the list (for example, just return it)
-        return jsonify({"status": "success", "data": data['injured']}), 200
-    else:
-        return jsonify({"status": "error", "message": "Invalid input, expected a list under 'injured'"}), 400
 
 
 
