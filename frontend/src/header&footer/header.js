@@ -48,7 +48,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" onClick={() => navigate('/legal')}>Legal Framework</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/find')}>Find Lawyers</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/nda')}>Generate NDA</a></li>
-                                <li><a className="dropdown-item" onClick={() => navigate('/tnc')}>Generate T%C</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/tnc')}>Generate T&C</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/links')}>Legal Links</a></li>
                             </ul>
                         </li>
