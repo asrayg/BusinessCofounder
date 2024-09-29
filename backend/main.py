@@ -2,19 +2,8 @@ from flask import Flask, request, jsonify
 import bedrocktest as bed
 import logging
 import boto3
-<<<<<<< HEAD
 from flask_cors import CORS, cross_origin
-
-
-
-=======
-from flask import Flask
-from flask_cors import CORS, cross_origin
->>>>>>> 9c33e54c4c91a77864d6788c83d3e8058719449a
 app = Flask(__name__)
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
-
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -228,4 +217,4 @@ def json_to_string(json_obj):
 
 if __name__ == '__main__':
 
-    app.run(port=5000)
+    app.run()
