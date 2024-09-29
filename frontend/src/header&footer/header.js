@@ -34,6 +34,9 @@ const Header = () => {
                                 <li><a className="dropdown-item" onClick={() => navigate('/pitchgen')}>Pitch Scripts</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/prospectus')}>Prospectus</a></li>
                                 <li><a className="dropdown-item" onClick={() => navigate('/target')}>Target Audience</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/bmc')}>Business Model Canvas</a></li>
+                                <li><a className="dropdown-item" onClick={() => navigate('/competition')}>Competition</a></li>
+
                             </ul>
                         </li>
                         <li className="nav-item dropdown fixZLayer">

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './ndaGenerator.css';
 import Header from '../header&footer/header.js';
 
-
 const NDAGenerator = () => {
   // State for storing form data
   const [formData, setFormData] = useState({
@@ -54,69 +53,72 @@ const NDAGenerator = () => {
   return (
     <div>
       <Header />
-    <div className="nda-generator-container">
-      {/* Input Form */}
-      <div className="nda-form">
-        <div className="form-group">
-          <label>Party One:</label>
-          <input
-            type="text"
-            name="partyOne"
-            value={formData.partyOne}
-            onChange={handleChange}
-            placeholder="Enter Party One"
-          />
-        </div>
-        <div className="form-group">
-          <label>Party Two:</label>
-          <input
-            type="text"
-            name="partyTwo"
-            value={formData.partyTwo}
-            onChange={handleChange}
-            placeholder="Enter Party Two"
-          />
-        </div>
-        <div className="form-group">
-          <label>Effective Date:</label>
-          <input
-            type="date"
-            name="effectiveDate"
-            value={formData.effectiveDate}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Confidential Information:</label>
-          <textarea
-            name="confidentialInformation"
-            value={formData.confidentialInformation}
-            onChange={handleChange}
-            placeholder="Describe the confidential information"
-          />
-        </div>
-        <div className="form-group">
-          <label>Jurisdiction:</label>
-          <input
-            type="text"
-            name="jurisdiction"
-            value={formData.jurisdiction}
-            onChange={handleChange}
-            placeholder="Enter Jurisdiction (e.g., California)"
-          />
+      <div className="nda-generator-container">
+        {/* Input Form */}
+        <div className="nda-form">
+          <div className="form-row">
+            <div className="form-group">
+              <label>Party One:</label>
+              <input
+                type="text"
+                name="partyOne"
+                value={formData.partyOne}
+                onChange={handleChange}
+                placeholder="Enter Party One"
+              />
+            </div>
+            <div className="form-group">
+              <label>Party Two:</label>
+              <input
+                type="text"
+                name="partyTwo"
+                value={formData.partyTwo}
+                onChange={handleChange}
+                placeholder="Enter Party Two"
+              />
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>Effective Date:</label>
+            <input
+              type="date"
+              name="effectiveDate"
+              value={formData.effectiveDate}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Confidential Information:</label>
+            <textarea
+              name="confidentialInformation"
+              value={formData.confidentialInformation}
+              onChange={handleChange}
+              placeholder="Describe the confidential information"
+            />
+          </div>
+          <div className="form-group">
+            <label>Jurisdiction:</label>
+            <input
+              type="text"
+              name="jurisdiction"
+              value={formData.jurisdiction}
+              onChange={handleChange}
+              placeholder="Enter Jurisdiction (e.g., California)"
+            />
+          </div>
+
+          <button onClick={generateNDA} className="generate-nda-button">Generate NDA</button>
         </div>
 
-        <button onClick={generateNDA} className="generate-nda-button">Generate NDA</button>
+        {/* Display Generated NDA */}
+        {ndaText && (
+          <div className="nda-result">
+            <h3>Generated NDA</h3>
+            <pre>{ndaText}</pre>
+          </div>
+        )}
       </div>
-
-      {/* Display Generated NDA */}
-      {ndaText && (
-        <div className="nda-result">
-          <h3>Generated NDA</h3>
-          <pre>{ndaText}</pre>
-        </div>
-      )}
-    </div>
     </div>
   );
 };

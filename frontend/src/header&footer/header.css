@@ -1,451 +1,113 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100%;
-    /* Ensures the body takes up the full viewport height */
-    overflow-x: hidden;
-}
-
-
-.main-content {
-    padding: 20px;
-    height: 100vh;
-    /* Makes sure the next section also fills the screen */
-    background-color: #f0f0f0;
-    /* Optional, just to distinguish it visually */
-}
-
-.newFont {
-    font-family: "parisine-std-compress", sans-serif;
-    font-weight: 700;
-    font-size: normal;
-}
-
-.herdMateDesc {
-    font-family: "parisine-std-clair", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-/* .herdMateFont {
-    font-family: 'ZTChintzy', sans-serif;
-  } */
-
-.herdMateFont {
-    font-family: 'parisine-bold', 'Times New Roman';
-}
-
-@font-face {
-    font-family: 'ZTChintzy';
-    src: url('../fonts/ZTChintzy-Heavy.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'parisine-bold';
-    src: url('../fonts/parisine-bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.title {
-    /* font-family: parisine-std-sombre-regular, sans-serif; */
-    font-weight: 1400;
-    font-size: 100px;
-    color: white;
-    text-align: center;
-    justify-content: center;
-
-}
-
-.center-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 12%;
-    /* Add top padding to push the content down slightly */
-    padding-bottom: 0;
-    /* Remove extra bottom space */
-    width: 70vw;
-    margin: 0 auto;
-}
-
-@media (width: 1100px),
-(width: 2160px) {
-    .center-title {
-        padding-top: 7%;
-        text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
-    }
-
-    .center-header {
-        padding-bottom: 3% !important;
-    }
-}
-
-
-
-.center-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Centers the text within the element */
-    width: 55%;
-    /* Adjust this width as needed, or remove it if unnecessary */
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    margin: 0 auto;
-    /* Centers the entire element horizontally */
-    font-weight: 800;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-}
-
-@media (max-width: 600px) {
-    .center-title {
-        font-size: 15vw;
-        /* Adjust width for smaller screens */
-        width: 100%;
-    }
-
-    .center-header {
-        font-size: 5vw;
-        /* Adjust width for smaller screens */
-        width: 80%;
-        padding-top: 8% !important;
-        padding-bottom: 8% !important;
-    }
-
-    .joinButton {
-        width: 55vw !important;
-        font-size: 7vw !important;
-        background-color: rgba(0, 0, 0, .2) !important;
-
-    }
-
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .navBarLander {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
-    margin-top: .2vw;
-    padding-bottom: 1vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    background-color: #004b8c; /* Darker blue background for a premium feel */
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Elevation for header */
+    font-family: 'Poppins', sans-serif; /* Using Poppins for the entire header */
+    position: sticky;
+    top: 0;
+    z-index: 999; /* Ensures the header stays on top when scrolling */
+}
+
+.navBarLogo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+}
+
+.navBarLogo:hover {
+    color: #ff7a7a; /* Smooth orange hover effect */
 }
 
 .navBarContents {
     display: flex;
-    /* Flexbox to align the nav items in a row */
     align-items: center;
 }
 
-.navBarLogo {
-    font-size: 4.2vh;
-    padding-left: 0vw;
-    white-space: nowrap;
-    /* Prevents the logo from wrapping to the next line */
+.nav-item {
+    margin-right: 30px; /* More spacing between menu items */
 }
 
-.hamburgerBar {
-    width: 50px;
-    /* Set a fixed width if needed */
-    height: auto;
-    margin-right: 1vw;
-}
-
-.herdMateDesc {
-    display: flex;
-    align-items: center;
-    font-weight: 100;
-}
-
-.navBody {
-    margin-right: 2vw;
-    /* Adjust space between each navigation link */
-    font-size: 2.5vh;
-    white-space: nowrap;
-    /* Prevents wrapping of nav items */
-}
-
-.hamburgerBar {
-    display: none;
-}
-
-.loginButton {
-    font-size: 2.5vh;
-    white-space: nowrap;
-    cursor: pointer;
-    color: #00cd26;
-    padding: 0px 10px 5px 10px;
-    border: 3px solid #00cd26;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.loginButton:hover {
-    background-color: #00cd26;
-    /* Semi-transparent green */
+.nav-link {
     color: #ffffff;
-}
-
-.loginButtonRED {
-    font-size: 2.5vh;
-    margin-left: .5vw;
-    white-space: nowrap;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
-    color: #d60000;
-    padding: 5px 10px 5px 10px;
-    border: 3px solid #d60000;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
 }
 
-.loginButtonRED:hover {
-    background-color: #d60000;
-    /* Semi-transparent green */
+.nav-link:hover {
+    background-color: #ff7a7a; /* Subtle background hover effect */
     color: #ffffff;
-}
-
-@media (max-width: 600px) {
-    .navWholeBody {
-        display: none;
-    }
-
-    .navBarLander {
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
-
-    .navBody {
-        margin-right: 3vw;
-    }
-
-    .loginButton {
-        margin-left: 2vw;
-    }
-
-    .hamburgerBar {
-        display: block;
-        width: 50px;
-        /* Adjust width if needed */
-        height: auto;
-        margin-right: 1vw;
-    }
-}
-
-
-/* What We Do Section */
-.what-we-do-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.what-we-do-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.features {
-    display: flex;
-    justify-content: space-around;
-}
-
-.feature-item {
-    width: 30%;
-}
-
-.feature-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.feature-item p {
-    font-size: 16px;
-}
-
-/* Additional Section */
-.additional-section {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.additional-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.additional-section p {
-    font-size: 18px;
-}
-
-/* Team Section */
-.team-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.team-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.team-members {
-    display: flex;
-    justify-content: space-around;
-}
-
-.team-member {
-    width: 30%;
-    text-align: center;
-}
-
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.team-member h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.team-member p {
-    font-size: 16px;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f4f4f4;
-}
-
-.contact-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 60%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.contact-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #ff6600;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
-
-.contact-button:hover {
-    background-color: #e55b00;
-}
-
-/* Footer Section */
-.footer-section {
-    padding: 20px;
-    text-align: center;
-    background-color: #333;
-    color: white;
-}
-
-.footer-section p {
-    margin: 0;
-}
-
-.HerdMateh2 {
-    font-family: 'parisine-bold', 'Times New Roman';
-    font-size: 5vw !important;
-}
-
-.HerdMateh3 {
-    font-family: 'parisine-bold', 'Times New Roman';
-    font-size: 2vw !important;
-    padding-top: 10vh;
-}
-
-.HerdMateh5 {
-    font-family: 'parisine-std-compress', 'Times New Roman';
-    font-size: 1.8vw !important;
-    padding-top: 5vh;
-    font-weight: 100;
 }
 
 .nav-link.active {
     text-decoration: underline;
-}
-
-
-/* Dropdown styles */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-toggle {
-    cursor: pointer;
+    font-weight: 600;
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 4px;
-    padding: 8px 0;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 .dropdown-item {
-    color: #333;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    transition: background-color 0.3s ease;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .dropdown-item:hover {
-    background-color: #f1f1f1;
+    background-color: #f7f7f7;
 }
 
-/* Optional: Add a subtle animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
 }
 
-.dropdown:hover .dropdown-menu {
-    animation: fadeIn 0.3s ease;
+.navbar-toggler-icon {
+    color: #ffffff;
 }
 
-.fixZLayer {
-    z-index: 99;
+.nav-link.navBody {
+    padding: 12px 18px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.nav-link.navBody:hover {
+    background-color: #ff7a7a;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-right: 10px;
+    }
+
+    .navBarLogo {
+        font-size: 1.6rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
 }

@@ -30,7 +30,6 @@ function App() {
         <Route path="/nda" element={<NDAGenerator />} />
         <Route path="/find" element={<FindLawyers />} />
         <Route path="/links" element={<LegalLinks />} />
-
         <Route path="/competition" element={< Competition/>} />
         <Route path="/cofound" element={<CoFounder />} />
         <Route path="/email" element={<Email />} />

@@ -7,8 +7,6 @@ const LegalLinks = () => {
     <div>
       <Header />
       <div className="legal-links-container">
-        <h2>Useful Legal Links</h2>
-
         {/* LLC Creation Links */}
         <div className="legal-section">
           <h3>LLC Creation</h3>

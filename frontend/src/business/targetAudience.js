@@ -31,8 +31,6 @@ const TargetAudience = () => {
     <div>
       <Header />
     <div className="target-audience-container">
-      <h2>Target Audience</h2>
-
       <div className="feedback-box">
         <p>Your target audience:</p>
         <div className="circle" style={{ backgroundColor: getCircleColor() }}></div>

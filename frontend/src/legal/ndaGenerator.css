@@ -1,75 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .nda-generator-container {
-    padding: 20px;
-    background-color: #e6f0ff;
-    text-align: center;
-  }
-  
-  h2 {
-    color: #0a73b7;
-  }
-  
-  .nda-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    width: 60%;
-    margin: 20px auto;
-    text-align: left;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  textarea {
-    height: 80px;
-  }
-  
-  .generate-nda-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .generate-nda-button:hover {
-    background-color: #45a049;
-  }
-  
-  .nda-result {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    width: 60%;
-    margin: 20px auto;
-    text-align: left;
-  }
-  
-  pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    line-height: 1.6;
-  }
-  
+  padding: 40px;
+  background-color: #f4f8ff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nda-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0a73b7;
+  box-shadow: 0 0 10px rgba(10, 115, 183, 0.15);
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: #0a73b7;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #085a92;
+  transform: scale(1.05);
+}
+
+/* Form row for Party One and Party Two fields */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .form-group {
+  width: 48%;
+}
+
+/* Generated NDA Styling */
+.nda-result {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.nda-result h3 {
+  color: #0a73b7;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+pre {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
