@@ -15,12 +15,15 @@ import NDAGenerator from './legal/ndaGenerator';
 import FindLawyers from './legal/findLawyers';
 import TCGenerator from './legal/tnccreator';
 import LegalLinks from './legal/links';
+import LandingPage from './landingpage/landingpage';
+import Header from './header&footer/header';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Business />} />
+      <Route path="/header" element={<Header />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/bmc" element={<BusinessModelCanvas />} />
         <Route path="/business" element={<Business />} />
         <Route path="/pitch" element={<PitchDeck />} />
