@@ -2,11 +2,18 @@ from flask import Flask, request, jsonify
 import bedrocktest as bed
 import logging
 import boto3
+<<<<<<< HEAD
 from flask_cors import CORS, cross_origin
 
 
 
+=======
+from flask import Flask
+from flask_cors import CORS, cross_origin
+>>>>>>> 9c33e54c4c91a77864d6788c83d3e8058719449a
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -30,12 +37,11 @@ def hello_world():
 
 
 
-@app.route('/makeemail', methods=['POST'])
+@app.route('/makeemail', methods=['GET'])
 @cross_origin()
 def make_email():
     data = request.get_json()
-    print(data)
-    system_prompts = [{"text": "You are a app that writes start ups emails"}]
+    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email"}]
     message = {
         "role": "user",
         "content": [{"text": data['text']}]
@@ -51,11 +57,13 @@ def make_email():
 
 
 @app.route('/clremail', methods=['DELETE'])
+@cross_origin()
 def clr_email():
     emails=[]
 
 
 @app.route('/makeSlides', methods=['GET'])
+@cross_origin()
 def mk_slides():
     data = request.get_json()
     system_prompts = [{"text": '''You are a helpful, intelligent assistant. You are experienced with PowerPoint.
@@ -169,19 +177,26 @@ The output must be only a valid and syntactically correct JSON adhering to the f
 ```json'''}]
     tmp = []
     datastr = "Make a pitchdeck based off of this info about the bussness" + json_to_string(data)
-    print(system_prompts)
     message = {
         "role": "user",
         "content": [{"text": datastr}]
     }
     tmp.append(message)
-
+    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email"}]
     response = bed.generate_conversation(
         bedrock_client, model_id, system_prompts, tmp)
+    output_message = response['output']['message']['content']
+
+    tmp2 = []
+    print(output_message)
+    tmp2.append(output_message)
+    print(tmp2[0])
+    tmp2[0][0]['text'] = "remove all new lines from this: " +  tmp2[0][0]['text']
+    
+    response = bed.generate_conversation(
+        bedrock_client, model_id, system_prompts, tmp2)
     print(response)
     output_message = response['output']['message']
-
-
 
 
 
