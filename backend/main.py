@@ -60,6 +60,94 @@ def clr_email():
 
 
 
+@app.route('/qPitch', methods=['POST'])
+@cross_origin()
+def quick_pitch():
+    data = request.get_json()
+    print("------------------------------------------------------------")
+    ret = {
+        "15": generic_gen("make a 15 second pitch for this startup", json_to_string(data)),
+        "90": generic_gen("make a 90 second pitch for this startup", json_to_string(data)),
+        "4": generic_gen("make a 4 min pitch for this startup", json_to_string(data))
+    }
+    return ret
+
+
+
+
+@app.route('/bmc', methods=['POST'])
+@cross_origin()
+def bmc():
+    data = request.get_json()
+    pmt = "make a business model canvas for this startup"
+    return generic_gen(pmt,json_to_string(data))  
+
+
+
+
+@app.route('/pros', methods=['POST'])
+@cross_origin()
+def pros():
+    data = request.get_json()
+
+    pmt = "make a prospectus for this startup"
+    return generic_gen(pmt,json_to_string(data))  
+
+
+
+
+
+@app.route('/lgegal', methods=['POST'])
+@cross_origin()
+def legal():
+    data = request.get_json()
+
+    pmt = "make a legal framework for this startup"
+    return generic_gen(pmt,json_to_string(data))  
+
+
+
+@app.route('/tnc', methods=['POST'])
+@cross_origin()
+def tnc():
+    data = request.get_json()
+
+    pmt = "make a T&C for this startup"
+    return generic_gen(pmt,json_to_string(data))  
+
+
+
+
+
+
+
+
+
+
+
+def generic_gen(prompt, sys_prompt):
+    data = request.get_json()
+    tmp = []
+    print("1111111111111111111111111111111111111111111111111111111111111111111")
+    message = {
+        "role": "user",
+        "content": [{"text": prompt}]
+    }
+    tmp.append(message)
+
+
+    system_prompt = [{"text": sys_prompt}]
+    print("222222222222222222222222222222222222222222222222222222222222222222")
+    response = bed.generate_conversation(
+        bedrock_client, model_id, system_prompt, tmp)
+    print(response)
+    return response['output']['message']
+    
+
+
+
+
+
 
 
 
