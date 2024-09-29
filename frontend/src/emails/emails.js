@@ -1,60 +1,6 @@
-// import React, { useState, useEffect } from "react";
-// import Header from '../header&footer/header.js';
-
-// // Function to handle sending a request to the Flask backend
-// async function askBackend(message) {
-//   try {
-//     const response = await fetch('http://127.0.0.1:5000/makeemail', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ "text": message })
-//     });
-//     const data = await response.json();
-//     console.log('Response from backend:', data);
-//     return data;
-//   } catch (error) {
-//     console.error('Error asking backend:', error);
-//     return 'An error occurred while fetching the response.';
-//   }
-// }
-
-// // Create a React component for the Email interface
-// function Email() {
-//   const [userInput, setUserInput] = useState('');
-//   const [response, setResponse] = useState('');
-
-//   const handleUserInput = async () => {
-//     if (userInput) {
-//       const result = await askBackend(userInput);
-//       setResponse(result);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <Header />
-//       <div>
-//         <h1>Ask the Backend</h1>
-//         <input
-//           type="text"
-//           value={userInput}
-//           onChange={(e) => setUserInput(e.target.value)}
-//           placeholder="Enter your question"
-//         />
-//         <button onClick={handleUserInput}>Ask</button>
-//         <div>{response}</div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Email;
-
-
 import React, { useState } from "react";
 import Header from '../header&footer/header.js';
+import './emails.css';
 
 // Function to handle sending a request to the Flask backend
 async function askBackend(message) {
@@ -68,47 +14,55 @@ async function askBackend(message) {
     });
     const data = await response.json();
     console.log('Response from backend:', data);
-    return data;  // Assuming the backend returns an object, e.g., { "text": "Some response" }
+    return data;  // Assuming the backend returns an object with text property
   } catch (error) {
     console.error('Error asking backend:', error);
-    return { text: 'An error occurred while fetching the response.' }; // Return an object with text
+    return { text: 'An error occurred while fetching the response.' }; // Error handling
   }
 }
 
 // Create a React component for the Email interface
-function Email() {
-  const [userInput, setUserInput] = useState(''); // Just keeping track of input, no response state needed.
+function EmailGenerator() {
+  const [userInput, setUserInput] = useState(''); // Input state
+  const [response, setResponse] = useState(''); // State to store the backend response
 
   const handleUserInput = async () => {
     if (userInput) {
       const result = await askBackend(userInput);
       
-      // Directly manipulate the DOM to paste the response on the page
+      // Update the state with the backend response
       const responseText = result[0].text || 'No response received';
-      document.getElementById('response-container').innerText = responseText; // Display the text in a specific div
+      setResponse(responseText); // Display response in a styled container
     }
   };
 
   return (
-    <div>
+    <div className="email-generator-container">
       <Header />
-      <div>
-        <h1>Ask the Backend</h1>
-        <input
-          type="text"
-          value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
-          placeholder="Enter your question"
-        />
-        <button onClick={handleUserInput}>Ask</button>
+      <div className="email-content">
+        <h2>Generate Your Email</h2>
+        <p>Input the email request or details you'd like generated, and the backend will provide the content.</p>
 
-        {/* Display the response somewhere on the page */}
-        <div id="response-container" style={{ marginTop: '20px', fontSize: '18px', color: 'blue' }}>
-          {/* The response from the backend will be inserted here */}
+        {/* User Input Section */}
+        <div className="email-input-container">
+          <input
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Enter your email request"
+            className="email-input"
+          />
+          <button onClick={handleUserInput} className="generate-email-button">Generate Email</button>
+        </div>
+
+        {/* Display Response */}
+        <div id="response-container" className="response-container">
+          <h3>Email Response:</h3>
+          <p>{response}</p> {/* Display the response here */}
         </div>
       </div>
     </div>
   );
 }
 
-export default Email;
+export default EmailGenerator;
