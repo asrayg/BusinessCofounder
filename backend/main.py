@@ -36,7 +36,7 @@ def hello_world():
 def make_email():
     data = request.get_json()
     emails = []
-    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email, the startup you are writing for is"}]
+    system_prompts = [{"text": "You are a app that writes emails for start ups, only output in the form of a formal email, the startup you are writing for is" + json_to_string(data['about'])}]
     message = {
         "role": "user",
         "content": [{"text": data['text']}]
