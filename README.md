@@ -1,46 +1,31 @@
-# Welcome to Hack Midwest 2024!
-<br /> <br />
+# Made for Hack Midwest 2024!
 
-## Getting Started
-Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
-1. Clone this repository and rename to the name of your app or idea
-2. Make it **private**
-3. Add pr@kcitp.com as a user
-4. Populate the Team, App & Challenges info below and update as needed
+# Team 
+Asray Gopa (@asrayg)
+Arjun Patel (@arj873)
+Justin Moran (@justinpmoran)
 
-<br /><br />
+# BusinessCoFounder 
 
-## Who's on your team?
-*List the full names,  email address & Github username of your teammates*
+## Overview
+**BusinessCoFounder** is a platform designed to connect entrepreneurs with potential co-founders, collaborators, and investors. The platform uses advanced AI tools to match users based on skills, interests, and location, making it easier to form productive business partnerships.
 
-1.   Asray Gopa     || asray@iastate.edu      || asrayg
-2.   Arjun Patel    || anpatel@iastate.edu    || arj873
-3.   Justin Moran   || jmoran0@iastate.edu    || JustinPMoran
+## Cloud Tools
+Our platform is powered by several AWS services to ensure scalability and performance:
+
+1. **AWS Bedrock**: Provides AI-driven features for user matching and recommendations.
+2. **AWS AppRunner**: Manages the backend services for user data and API handling.
+3. **AWS Amplify**: Hosts the frontend, ensuring seamless integration with backend services and easy deployment.
+
+## Frontend Engineering
+The frontend for **BusinessCoFounder** was built with a focus on providing a smooth and intuitive user experience. Here's a breakdown of the frontend architecture:
+
+### Tech Stack
+- **React**: We used React for building the user interface, ensuring a dynamic and responsive experience.
+- **AWS Amplify**: Our frontend is hosted and deployed using AWS Amplify, allowing for easy management of the UI, integration with backend services, and automatic CI/CD pipelines.
+- **Tailwind CSS**: For styling, we used Tailwind CSS, which provides utility-first classes that help us design clean and responsive UIs with minimal custom CSS.
   
-<br /><br />
-
-
-## What is the name of your App?
-*BusinessCofounder: Your First and Last Business Co-Founder *
-
-<br /><br />
-
-## What does your app do?
-*Helps technical cofounders with business stuff and helps them find a business partner as well so they dont need out web app anymore*
-
-<br /><br />
-
-
-## What challenges are you building for? SELECT ALL THAT APPLY
-*See hackmidwest.com/#prizes for challenge details*
-- [ ]  Pinata Challenge
-- [ ]  Pinata AI Challenge
-- [ ]  Pinata Enterprise Challenge
-- [X]  AWS Bedrock Challenge
-- [ ]  Red Hat | Intel AI Challenge
-- [ ]  Zoom Challenge
-- [ ]  USDA Challenge
-- [X]  brAIn Rot Challenge
-
-
-<br /><br />
+### Features
+- **User Dashboard**: A clean and organized dashboard where users can view co-founder recommendations, edit their profiles, and manage collaboration requests.
+- **Search and Match**: A dynamic search functionality, leveraging AI from AWS Bedrock, that matches users with potential co-founders or collaborators.
+- **Responsive Design**: The frontend is fully responsive, ensuring that users can access the platform seamlessly across devices, from desktops to mobile phones.
